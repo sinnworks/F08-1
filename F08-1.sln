@@ -5,6 +5,11 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F08-1", "F08-1\F08-1.csproj", "{29F320A0-C0A5-406E-9EEA-EB7FEB9C435A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "方案項目", "方案項目", "{372AD72D-9F87-4CCC-82BC-19C188D333ED}"
+	ProjectSection(SolutionItems) = preProject
+		F08-1\ReadMe.txt = F08-1\ReadMe.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

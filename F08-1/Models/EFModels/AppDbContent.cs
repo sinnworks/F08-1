@@ -13,7 +13,7 @@ namespace F08_1.Models.EFModels
         }
 
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<ContactU> ContactUs { get; set; }
+        public virtual DbSet<ContactUs> ContactUs { get; set; }
         public virtual DbSet<MemberCart> MemberCarts { get; set; }
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<OrderItem> OrderItems { get; set; }
@@ -28,11 +28,11 @@ namespace F08_1.Models.EFModels
                 .WithRequired(e => e.Category)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<ContactU>()
+            modelBuilder.Entity<ContactUs>()
                 .Property(e => e.Gender)
                 .IsFixedLength();
 
-            modelBuilder.Entity<ContactU>()
+            modelBuilder.Entity<ContactUs>()
                 .Property(e => e.PhoneNumber)
                 .IsFixedLength()
                 .IsUnicode(false);

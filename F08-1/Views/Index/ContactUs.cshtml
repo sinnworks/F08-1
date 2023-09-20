@@ -1,17 +1,17 @@
-﻿@model F08_1.Models.EFModels.ContactU
+﻿@model F08_1.Models.EFModels.ContactUs
 
 @{
-    ViewBag.Title = "ContactUs";
+    ViewBag.Title = "聯絡我們";
 }
 
-<h2>ContactUs</h2>
+<h2>聯絡我們</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 }
-    
+
 <div class="form-horizontal">
 
     <hr />
@@ -57,7 +57,7 @@
     <div class="mb-3">
         @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "form-label col-md-2" })
         <div class="col-md-10">
-            <input type="file" id="File" name="File" class="form-control" />            
+            <input type="file" id="File" name="File" class="form-control" />
             @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -69,9 +69,9 @@
     </div>
 </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
