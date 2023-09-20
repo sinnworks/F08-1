@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "登入會員";
+}
+
+<h2>登入會員</h2>
+<form action="api/login.php" method="post">
+    <div>
+        帳號：<br>
+        <input type="text" name="acc">
+    </div>
+    <div>
+        密碼：<br>
+        <input type="password" name="pw">
+    </div>
+    <div>
+        <input type="button" value="登入"> <br>
+        <a href="javascript:$('#login').slideUp(300, function(){$('#register').slideDown();});">註冊</a> |
+        <a href="javascript:$('#login').slideUp(300, function(){$('#forget-password').show()});">忘記密碼</a>
+    </div>
+</form>
+        
+
+<div class="container" id="forget-password">
+    <h2>忘記密碼</h2>
+    <form action="api/login.php" method="post">
+        <div>
+            帳　號：<br>
+            <input type="text" name="acc">
+        </div>
+        <div>
+            Email：<br>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <input type="button" value="重設密碼"><br>
+            <a href="javascript:$('#forget-password').slideUp(300, function(){$('#login').show()});">登入系統</a>
+        </div>
+    </form>
+</div>
+    
+
+@section scripts{
+    <script>
+        $(function () {
+            $("#register, #forget-password").hide();
+        })
+    </script>
+}
+
+
