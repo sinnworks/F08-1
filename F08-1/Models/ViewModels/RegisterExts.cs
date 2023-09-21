@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using F08_1.Models.EFModels;
 using F08_1.Models.Infra;
 
 namespace F08_1.Models.ViewModels
 {
-    public class RegisterExts
+    public static class RegisterExts
     {
         public static Member ToEFModel(this RegisterVm vm)
         {
@@ -21,7 +22,7 @@ namespace F08_1.Models.ViewModels
                 EncryptedPassword = hashPassword,
                 Email = vm.Email,
                 Name = vm.Name,
-                Mobile = vm.Mobile,
+                PhoneNumber = vm.PhoneNumber,
                 IsConfirmed = false,
                 ConfirmCode = confirmCode
             };

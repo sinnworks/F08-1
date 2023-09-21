@@ -322,7 +322,7 @@ namespace BookStore.Site.Controllers
 
             memberInDb.Name = vm.Name;
             memberInDb.Email = vm.Email;
-            memberInDb.Mobile = vm.Mobile;
+            memberInDb.PhoneNumber = vm.PhoneNumber;
 
             db.SaveChanges();
         }
