@@ -21,5 +21,10 @@ namespace F08_1.Models.Infra
                 return sb.ToString();
             }
         }
+
+        public static string GetSalt()
+        {
+            return System.Configuration.ConfigurationManager.AppSettings["salt"];
+        }
     }
 }
