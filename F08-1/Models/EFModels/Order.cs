@@ -11,6 +11,7 @@ namespace F08_1.Models.EFModels
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
         {
+            Discounts = new HashSet<Discount>();
             OrderItems = new HashSet<OrderItem>();
         }
 
@@ -22,6 +23,9 @@ namespace F08_1.Models.EFModels
         public int MemberId { get; set; }
 
         public int Total { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Discount> Discounts { get; set; }
 
         public virtual Member Member { get; set; }
 
