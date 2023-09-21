@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrumptious-購物車</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin-top: 60px;
+        }
+
+        .qty {
+            width: 50px;
+            text-align: center;
+        }
+
+        .product {
+            max-width: 80px;
+            object-fit: cover;
+
+        }
+
+        .products h6 {
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .bg-primary {
+            /* background-color: green !important; */
+            如果要改背景顏色, 請自行在這裡指定
+        }
+
+        .nav-link {
+            /* color: red !important; 如果要改連結顏色,請自行在這裡指定 */
+        }
+
+        .customBtn {
+            /* color:red; */
+        }
+    </style>
+</head>
+<body>
+<!--導覽列 begin-->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">scrumptious</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">菜單</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categoryShoes.htmlcategoryShoes.html">開始點餐</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">聯絡我們</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                類別
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">肉類</a></li>
+              <li><a class="dropdown-item" href="#">菜類</a></li>
+              <li><a class="dropdown-item" href="#">火鍋料</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">湯底</a></li>
+            </ul>
+          </li>
+        
+        </ul>
+        <!-- <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light customBtn" type="submit">Search</button>
+        </form> -->
+        <div class="memberNav">
+            <a href="#" class="text-white">登入會員</a>
+            <a href="#" class="text-white">註冊會員</a>
+            <a href="#" class="text-white">購物車</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!--導覽列 end-->
+
+<div>
+    <div class="m-3">
+
+        <div class="container">
+            <div class="row">
+                <h3 class="fw-bolder">購物車清單</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <select name="" id="" class="form-select-sm mb-3" style="width:200px;">
+                                <option value="">按購買順序</option>
+                                <option value="">按單價排序</option>
+                                <option value="">按商品分類排序</option>
+                                <option value="">按小計排序</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <table class="table table-striped table-bordered align-middle products">
+                    <thead class="table-light fw-bolder">
+                    <tr>
+                        <td>照片</td>
+                        <td>品名</td>
+                        <td class="text-end ps-4 pe-4">單價</td>
+                        <td class="text-end ps-4 pe-4">數量</td>
+                        <td class="text-end ps-4 pe-4">小計</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--單一商品 begin-->
+                    <tr>
+                        <td width="10%"><img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg"
+                                             class="img-fluid rounded product"></td>
+                        <td width="80%">
+                            <h6>麻辣鍋套餐</h6>
+                        </td>
+                        <td class="text-end ps-4 pe-4">
+                            2,200
+                        </td>
+                        <td class="text-end ps-4 pe-4" nowrap>
+                            <input type="button" value=" - "> <input type="text" value="2" class="qty"> <input
+                                type="button" value=" + ">
+                        </td>
+                        <td class="text-end ps-4 pe-4">
+                            4,600
+                        </td>
+                    </tr>
+                    <!--單一商品 end-->
+                    </tbody>
+                    
+                    <!--總計 begin-->
+                    <tr>
+                        <td colspan="5" class="text-end">
+                            <h6 id="totalPanel">總計: 4,600</h6>
+                        </td>
+                    </tr>
+                    <!--總計 end-->
+                </table>
+
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">取餐日期</label>
+                <input type="date" />
+                
+            </div>
+            <div class="col-md-6">
+                
+                <label class="form-label">取餐時間</label>
+                <input type="time" />
+            </div>
+            <div class="col-md-8">
+                <label for="inputGender" class="form-label">優惠券</label>
+                <select id="inputGender" class="form-select">
+                  <option selected>
+                    <option value="Male">1</option>
+                    <option value="Female">2</option>
+                    <option value="Other">3</option>
+                </option>
+            </select>
+          </div>
+          <div class="col-md-8">
+            <label for="inputPhoneNumber" class="form-label">備註</label>
+            <textarea class="form-control" style="height:150px;" id="floatingInput" placeholder=""></textarea>
+        </div>  
+        <br/>
+        <div class="">
+            <class="form-label">★請至scrumptious(台北市富裕區有錢路)取餐</class=>  
+            <br/>
+            <class="form-label">★電話:02-2154-7841</class=>  
+            <br/>
+            <class="form-label">★餐點為現點現做，請提前預訂</class=>            
+        </div>
+            <div class="row">
+                <div class="col-12 text-end"><input type="button" class="btn btn-danger" value="結帳"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

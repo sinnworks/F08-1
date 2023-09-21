@@ -36,7 +36,10 @@ namespace F08_1.Models.ViewModels
         [Display(Name = "上傳檔案")]
         [Required]
         public HttpPostedFileBase File { get; set; }
-    }
+
+        public string FileName { get; set; }
+    
+}
 
     public class P010A02VM
     {

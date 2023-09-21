@@ -10,7 +10,6 @@ namespace F08_1.Models.EFModels
 {
     public class ContactUs
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Display(Name = "姓名")]
@@ -36,7 +35,7 @@ namespace F08_1.Models.EFModels
         public string PhoneNumber { get; set; }
 
         [Display(Name = "上傳檔案")]
-        [Required]        
+        [Required]
         public HttpPostedFileBase File { get; set; }
     }
 }

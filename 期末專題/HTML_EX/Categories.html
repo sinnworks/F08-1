@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+      body{
+        margin-top: 80px;
+      }
+      .prodImg{
+            border-radius: 20px !important;
+        }
+        .otherProduct {
+            max-width: 120px;
+            object-fit: cover;
+
+        }
+        otherProducts h6{
+            font-weight: 700;
+            color: #333;
+            margin-bottom:20px;
+            font-size: 5.4rem;
+        }
+        .hotProducts{
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+      </style>
+</head>
+<body>
+    <!-- 導覽列開始 -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container container-fluidxx">
+        <a class="navbar-brand" href="#">scrumptious</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">首頁</a>
+            </li>              
+            <li class="nav-item">
+              <a class="nav-link" href="#">開始點餐</a>
+            </li>
+          </li>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                菜單介紹
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">肉類</a></li>
+                <li><a class="dropdown-item" href="#">菜類</a></li>
+                <li><a class="dropdown-item" href="#">火鍋料</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">湯底</a></li>
+              </ul>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">聯絡我們</a>
+              </li> 
+          </ul>
+          
+          <div class="memberNav">
+            <a href="#" class="text-dark">登入會員</a>
+            <a href="#" class="text-dark">註冊會員</a>
+            <a href="#" class="text-dark">購物車</a>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+      <!-- 導覽列結束 -->
+      <div class="container">
+      <!-- 麵包屑開始 -->
+        <div class="row">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">首頁</a></li>
+              <li class="breadcrumb-item"><a href="#">餐點類別</a></li>
+              
+            </ol>
+          </nav>
+      <!-- 麵包屑結束 -->
+      <div>
+
+            <div class="row">
+            <h1 class="mt-5 fw-bolder">肉類
+                <small class="fw-normal fst-italic"></small>
+            </h1>
+          </div>
+
+          <div class="col-lg-3 col-md-6 ">
+            <div class="card">
+              <img src="images/ricky-lk-q8gs-mCYKO4-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
+              <div class="card-body">
+                <h5 class="card-title">A5和牛</h5>
+                <p class="card-text">scrumptious嚴選最佳日本和牛肉，直接空運來台，A5等級信譽保證。美麗色澤、細緻油花</p>
+                <p>NT$ 3,800 </p>
+              </div>
+            </div>
+
+          </div>
+
+          <h1 class="mt-5 fw-bolder">菜類
+            <small class="fw-normal fst-italic"></small>
+        </h1>
+      </div>
+
+      <div class="col-lg-3 col-md-6 ">
+        <div class="card">
+          <img src="images/新鮮香菇B.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">新鮮香菇</h5>
+            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
+            <p>NT$ 350 </p>
+          </div>
+        </div>
+
+      </div>
+
+          <h1 class="mt-5 fw-bolder">湯底
+            <small class="fw-normal fst-italic"></small>
+        </h1>
+          <div class="row">
+            <div class="col-lg-3 col-md-6 ">
+            <div class="card">
+              <img src="images/raymond-chiu-pq5-jYkIbM0-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
+              <div class="card-body">
+                <h5 class="card-title">酸菜白肉鍋</h5>
+                <p class="card-text">scrumptious對白菜品質很講究，以古法自然醃漬發酵20多天，酸菜白肉鍋湯頭酸而不嗆、口感溫和，還有濃濃的大骨湯味，且配料相當豐富，採用道地東北高煙囪火鍋，每一口都吃得到豬骨的香與雞骨的甜，搭配酸菜微酸的口感，暖胃又舒心！</p>
+                <p>NT$ 1,000 </p>
+              </div>
+            </div>
+
+          </div>
+                    <div class="col-lg-3 col-md-6 ">
+            <div class="card">
+              <img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
+              <div class="card-body">
+                <h5 class="card-title">麻辣鍋</h5>
+                <p class="card-text">scrumptious的麻辣鍋「重麻不重辣」，採用四川特級青花椒，搭配中藥五行，在濕熱的氣候下讓身體不易產生燥熱感。</p>
+                <p>NT$ 1,000 </p>
+              </div>
+            </div>
+  
+          </div>
+
+
+        </div>
+
+        
+      </div>
+  
+        </div>
+        
+        <div class="col-lg-3 col-md-6 ">
+        <div class="card">
+            <h3 class="mt-5 fw-bolder">火鍋料</h3>
+            <table class="table otherProducts">
+                <!-- <thread>
+                    <tr>
+                        <td>a</td>
+                        <td>b</td>
+                    </tr>
+                </thread>   -->
+                <tbody>
+                    <tr>
+                        <td><img src="images/123-22-1024x683.jpg" class="img-fluid rounded otherProduct"></td>
+                        <td width="90%">
+                        
+                            <h6 classxx="fw-bolder text-primary">蛋餃</h6>
+                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
+                            <p>NT$ 100
+                               
+                            </p>
+                    </tr>
+                    <tr>
+                        <td><img src="images/469.jpg" class="img-fluid rounded otherProduct"></td>
+                        <td width="90%">
+                        
+                            <h6 classxx="fw-bolder text-primary">鵪鶉蛋</h6>
+                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
+                            <p>NT$ 80
+                               
+                            </p>
+                    </tr>
+                    <tr>
+                        <td><img src="images/5454_G_1563848434317.jpg" class="img-fluid rounded otherProduct"></td>
+                        <td width="90%">
+                        
+                            <h6 classxx="fw-bolder text-primary">新竹貢丸</h6>
+                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
+                            <p>NT$ 120
+                               
+                            </p>
+                    </tr>
+                    <tr>
+                        <td><img src="images/690cc965ce6100892345f9af0550ff77.jpg" class="img-fluid rounded otherProduct"></td>
+                        <td width="90%">
+                        
+                            <h6 classxx="fw-bolder text-primary">角螺</h6>
+                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
+                            <p>NT$ 80
+                               
+                            </p>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+         <nav aria-label="Page navigation example">
+          <ul class="pagination justify content-center">
+            <li class="page-item disabled"><a class="page-link" href="#"></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
+          </ul>
+         </nav>           
+</body>
+</html>

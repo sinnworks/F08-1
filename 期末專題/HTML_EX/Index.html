@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrumptious</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+    .small-image{
+      width: 100px; /* 設置寬度 */
+      height: 80px; /* 自動調整高度，保持原始比例 */
+      }
+
+      body{
+        margin-top: 80px;
+        background-image:url("");
+        
+      }
+
+      .prodImg{
+            border-radius: 20px !important;
+        }
+        .otherProduct {
+            max-width: 120px;
+            object-fit: cover;
+
+        }
+        otherProducts h6{
+            font-weight: 700;
+            color: #333;
+            margin-bottom:20px;
+            font-size: 1.4rem;
+        }
+        .hotProducts{
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .memberNav a{
+          margin-right: 15px;
+          text-decoration: none;
+        }
+        .memberNav a:hover{
+          color: #3EC1D5;
+          text-decoration: underline;
+          transition: all 0.5s ease-in-out;
+        }       
+      </style>
+</head>
+<body>
+    <!-- 導覽列開始 -->    
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top ">
+        <div class="container container-fluidxx">
+          <a class="navbar-brand" href="Index.html">
+            <img src="images/logo.jpg" alt="Scrumptious Logo" class="small-image">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">首頁</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="#">開始點餐</a>
+              </li>
+            </li>
+            
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  餐點類別
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">肉類</a></li>
+                  <li><a class="dropdown-item" href="#">菜類</a></li>
+                  <li><a class="dropdown-item" href="#">火鍋料</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">湯底</a></li>
+                </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">聯絡我們</a>
+                </li> 
+            </ul>
+            
+            <div class="memberNav d-flex flex-nowrap">
+              <a href="#" class="">登入會員</a>
+              <a href="#" class="">註冊會員</a>
+              <a href="#" class="">購物車</a>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- 導覽列結束 -->
+      
+      <div class="container">
+        <!-- 輪播開始 -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg" alt="..." style="height: 70vh; object-fit: cover;" class="d-block w-100"> 
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/raymond-chiu-pq5-jYkIbM0-unsplash.jpg"alt="..."  style="height: 70vh; object-fit: cover;" class="d-block w-100">
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="images/jason-leung-WmTK_QfDxlE-unsplash.jpg" style="height: 70vh; object-fit: cover;" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- 輪播結束 -->
+      </div>
+    </div>
+
+     <!-- ======= Portfolio Section ======= -->
+     <div id="portfolio" class="portfolio-area area-padding fix">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>我們希望帶給您的</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row wesome-project-1 fix">
+          <!-- Start Portfolio -page -->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-service">服務</li>
+              <li data-filter=".filter-environment">環境</li>
+              <li data-filter=".filter-products"">餐點</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row awesome-project-content portfolio-container">
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-service portfolio-item">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/stefan-schauberger-cy-H4onG8PI-unsplash.jpg" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/stefan-schauberger-cy-H4onG8PI-unsplash.jpg">
+                      <h4>專業侍酒師</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-environment">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg">
+                      <h4>座位有限，請提前預訂</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-products">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/austin-ban-IS6RwpuEJpY-unsplash.jpg" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/austin-ban-IS6RwpuEJpY-unsplash.jpg">
+                      <h4>廚師精心製作餐點</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-environment">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg">
+                      <h4>百萬夜景</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-products">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/stefan-schauberger-cy-H4onG8PI-unsplash.jpg" alt="" /></a>
+                <div class="add-actions text-center text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/stefan-schauberger-cy-H4onG8PI-unsplash.jpg">
+                      <h4>千萬酒窖珍藏</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+          <!-- portfolio-item start -->
+          <div class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-service">
+            <div class="single-awesome-project">
+              <div class="awesome-img">
+                <a href="#"><img src="images/yosuke-ota-x_tTO-YBM7s-unsplash (1).jpg" alt="" /></a>
+                <div class="add-actions text-center">
+                  <div class="project-dec">
+                    <a class="portfolio-lightbox" data-gallery="myGallery" href="images/yosuke-ota-x_tTO-YBM7s-unsplash (1).jpg">
+                      <h4>專業服務態度</h4>
+                      
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- portfolio-item end -->
+
+        </div>
+      </div>
+    </div><!-- End Portfolio Section -->
+      <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .main{
+            width:100%;
+            height:100vh;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            width:370px;
+            height:300px;
+            margin: 0 auto;
+            padding :10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            
+            box-shadow: 0 0 10px #ccc; /* 陰影 */
+        }
+        .container h2{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .container form{
+            width: 80%;
+            height: 100%;
+            padding-top:10px;
+            padding-left: 50px;
+            /* display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start; */
+            /* border:1px solid #ccc; */
+        }
+        input[type=text], input[type=password]{
+            width:90%;
+            margin:10px 0px;;
+        }
+        #register input[type=text], #register input[type=password]{
+            width:90%;
+            margin:0px 0px;;
+        }
+        input[type=button]{
+            margin:10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <!--導覽列 begin-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        
+          <a class="navbar-brand" href="#">scrumptious</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">菜單</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="categoryShoes.htmlcategoryShoes.html">開始點餐</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">聯絡我們</a>
+              </li>
+              
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    類別
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">肉類</a></li>
+                  <li><a class="dropdown-item" href="#">菜類</a></li>
+                  <li><a class="dropdown-item" href="#">火鍋料</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">湯底</a></li>
+                </ul>
+              </li>
+            
+            </ul>
+            <!-- <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light customBtn" type="submit">Search</button>
+            </form> -->
+            <div class="memberNav">
+                <a href="#" class="text-white">登入會員</a>
+                <a href="#" class="text-white">註冊會員</a>
+                <a href="#" class="text-white">購物車</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!--導覽列 end-->
+
+    <!--麵包屑 begin-->
+    
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">首頁</a></li>
+              <li class="breadcrumb-item active" >註冊會員</li>
+            </ol>
+        </nav>
+    </div>
+    <!--麵包屑 end-->
+    <div class="main">
+        <div class="container" id="login" >
+            <h2>登入系統</h2>
+            <form action="api/login.php" method="post">
+                <div>帳號：<br>
+                    <input type="text" name="acc"></div>
+                <div>密碼：<br>
+                    <input type="password" name="pw"></div>
+                <div>
+                    <input type="button" value="登入"> <br>
+                    <a href="javascript:$('#login').slideUp(300, function(){$('#register').slideDown();});">註冊</a> | 
+                    <a href="javascript:$('#login').slideUp(300, function(){$('#forget-password').show()});">忘記密碼</a>
+                </div>
+            </form>
+        </div>
+        
+        <div class="container" id="forget-password">
+            <h2>忘記密碼</h2>
+            <form action="api/login.php" method="post">
+                <div>帳　號：<br>
+                    <input type="text" name="acc"></div>
+                <div>Email：<br>
+                    <input type="text" name="email"></div>
+                <div>
+                    <input type="button" value="重設密碼"><br>
+                    <a href="javascript:$('#forget-password').slideUp(300, function(){$('#login').show()});">登入系統</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/jquery.3.6.4.js"></script>
+    <script>
+        $(function(){
+            $("#register, #forget-password").hide();
+        })
+    </script>
+</body>
+</html>
