@@ -1,7 +1,7 @@
-﻿[-] add efmodels
+﻿[V] add efmodels
 ====
 會員系統
-[-] add 註冊會員功能
+[V] add 註冊會員功能
 	add Models/Infra/HashUtility.cs
 	add AppSettings, <add key="salt" value="ar!Zu@#$D691RR"/>
 	add Models/ViewModels/RegisterVm.cs

@@ -1,12 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - scrumptious</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .custom-white-text {
+            color: white;         
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
@@ -24,11 +29,11 @@
                     <li>@Html.ActionLink("聯絡我們", "Index", "ContactUs", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <div class="memberNav">
-                    @*<a href="#" class="text-white">登入會員</a>*@
-                    @Html.ActionLink("登入會員", "Login", "Index")
-                    @Html.ActionLink("註冊會員", "Register", "Index")
-                    @Html.ActionLink("購物車", "Cart", "Index")
-
+                    <ul class="navbar-nav flex-grow-1">
+                        @Html.ActionLink("登入會員", "Login", "Index")
+                        @Html.ActionLink("註冊會員", "Register", "Members", new { area = "" }, new { @class = "nav-link custom-white-text" })
+                        @Html.ActionLink("購物車", "Cart", "Index")
+                    </ul>
                 </div>
             </div>
         </div>

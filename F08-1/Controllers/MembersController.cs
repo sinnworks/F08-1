@@ -404,9 +404,7 @@ namespace BookStore.Site.Controllers
             return (url, cookie);
 
         }
-        // 這支method如何實作註冊功能?
-        // 直接叫用 EF
-        // 叫用 MemberService
+        
         private void RegisterMember(RegisterVm vm)
         {
             var db = new AppDbContext();
