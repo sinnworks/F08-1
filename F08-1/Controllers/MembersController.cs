@@ -1,6 +1,7 @@
 ﻿using F08_1.Models.EFModels;
 using F08_1.Models.Infra;
 using F08_1.Models.ViewModels;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -300,13 +301,18 @@ namespace BookStore.Site.Controllers
 
             // 判斷輸入的原始密碼是否正確
             var hashedOrigPassword = HashUtility.ToSHA256(vm.OriginalPassword, salt);
-            if (string.Compare(memberInDb.EncryptedPassword, hashedOrigPassword, true) != 0)
+            //因為一開始資料類型設定MAX，現在改為(70)，會出現空白，所以要把空白刪掉
+            var encryptedPassword = memberInDb.EncryptedPassword.Trim();
+
+            if (string.Compare(encryptedPassword, hashedOrigPassword, true) != 0)
             {
                 throw new Exception("原始密碼不正確");
             }
 
             // 將新密碼雜湊
             var hashedPassword = HashUtility.ToSHA256(vm.Password, salt);
+
+            
 
             // 更新記錄
             memberInDb.EncryptedPassword = hashedPassword;

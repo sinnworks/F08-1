@@ -27,7 +27,7 @@
 	modify _layout, 加入 login/logout link
 	驗證: 目前在沒登入時,會自動判斷權限, 無法檢視 About page; 登入/登出功能已實作
 
-[-]實作 修改個人基本資料-建立會員中心頁
+[V]實作 修改個人基本資料-建立會員中心頁
 	add Models/ViewModels/EditProfileVm.cs
 	add Models/ViewModels/MemberExts class, 擴充方法 ToEditProfileVm(Member)
 
