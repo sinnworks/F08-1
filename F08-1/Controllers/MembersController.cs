@@ -107,6 +107,7 @@ namespace BookStore.Site.Controllers
 
             return Redirect(processResult.ReturnUrl);
         }
+        
 
         public ActionResult Logout()
         {
@@ -366,8 +367,9 @@ namespace BookStore.Site.Controllers
             // 將vm裡的密碼先雜湊之後,再與db裡的密碼比對
             var salt = HashUtility.GetSalt();
             var hashedPassword = HashUtility.ToSHA256(vm.Password, salt);
+            var encryptedPass = member.EncryptedPassword.Trim(); //因為一開始資料類型設定MAX，現在改為(70)，會出現空白，所以要把空白刪掉
 
-            if (string.Compare(member.EncryptedPassword, hashedPassword, true) != 0)
+            if (string.Compare(hashedPassword,encryptedPass, true) != 0)
             {
                 throw new Exception("帳號或密碼有誤");
             }

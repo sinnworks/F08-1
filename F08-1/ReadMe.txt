@@ -11,7 +11,7 @@
 		add Views/Members/Register.cshtml, RegisterConfirm.cshtml
 		modify _Layout.cshtml, add Register link
 
-[-] 實作 新會員 Email確認功能
+[V] 實作 新會員 Email確認功能
 	會員啟用的 url : /Members/ActiveRegister?memberId=99&confirmCode=tttttttttttttttttttttt
 	modify MembersController
 		add ActiveRegister(memberId, confirmCode)
