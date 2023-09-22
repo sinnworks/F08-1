@@ -12,17 +12,19 @@ namespace F08_1.Models.ViewModels
         public static Member ToEFModel(this RegisterVm vm)
         {
             var salt = HashUtility.GetSalt();
-            var hashPassword = HashUtility.ToSHA256(vm.Password, salt);
+            var hashEncryptedPassword = HashUtility.ToSHA256(vm.EncryptedPassword, salt);
             var confirmCode = Guid.NewGuid().ToString("N");
 
             return new Member
             {
                 Id = vm.Id,
+                Gender = vm.Gender,
                 Account = vm.Account,
-                EncryptedPassword = hashPassword,
+                EncryptedPassword = hashEncryptedPassword,
                 Email = vm.Email,
                 Name = vm.Name,
-                PhoneNumber = vm.PhoneNumber,
+                PhoneNumber = vm.PhoneNumber,                
+                Address = vm.Address,
                 IsConfirmed = false,
                 ConfirmCode = confirmCode
             };

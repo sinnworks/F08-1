@@ -40,25 +40,17 @@ namespace F08_1.Models.ViewModels
 
         [Display(Name ="密碼")]
         [Required]
-        [StringLength(30)]
-        public string Password { get; set; }
+        [StringLength(1000)]
+        public string EncryptedPassword { get; set; }
 
         [Display(Name ="確認密碼")]
         [Required]
-        [StringLength (30)]
-        [Compare(nameof(Password))]
+        [StringLength (1000)]
+        [Compare(nameof(EncryptedPassword))]
         [DataType(DataType.Password)]
-        public string ConfirmPassword { get; set; }
+        public string ConfirmEncryptedPassword { get; set; }
 
-        [Display(Name = "城市")]
-        [Required]
-        [StringLength(100)]
-        public string City { get; set; }
-
-        [Display(Name = "區域")]
-        [Required]
-        [StringLength(100)]
-        public string District { get; set; }
+        
 
         [Display(Name = "地址")]
         [Required]

@@ -1,17 +1,13 @@
-﻿using BookStore.Site.Models.EFModels;
-using BookStore.Site.Models.Infra;
-using BookStore.Site.Models.ViewModels;
-using F08_1.Models.EFModels;
+﻿using F08_1.Models.EFModels;
 using F08_1.Models.Infra;
 using F08_1.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using System.Web.UI.WebControls;
+using System.Web.WebSockets;
 
 namespace BookStore.Site.Controllers
 {
@@ -25,6 +21,14 @@ namespace BookStore.Site.Controllers
 
         public ActionResult Register()
         {
+            var list = new List<SelectListItem>
+            {
+                new SelectListItem { Value = "0", Text = "female" },
+                new SelectListItem { Value = "1",Text = "male"},
+                new SelectListItem { Value = "2",Text = "Other"}
+            };
+            ViewData["GenderList"] = new SelectList(list,"Value","Text",null);
+
             return View();
         }
 
@@ -278,7 +282,7 @@ namespace BookStore.Site.Controllers
             // 發送重設密碼信
             var url = string.Format(urlTemplate, memberInDb.Id, confirmCode);
 
-            new EmailHelper().SendForgetPasswordEmail(url, memberInDb.Name, email);
+            //new EmailHelper().SendForgetPasswordEmail(url, memberInDb.Name, email);
 
         }
 
@@ -418,7 +422,7 @@ namespace BookStore.Site.Controllers
             var member = vm.ToEFModel();
 
             // 叫用 EF 寫入資料庫
-            db.Members.Add(member);
+            db.Members.Add(member); 
             db.SaveChanges();
 
 

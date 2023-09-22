@@ -175,10 +175,17 @@
     <Compile Include="Models\EFModels\RuleBas.cs" />
     <Compile Include="Models\EFModels\ShoppingCart.cs" />
     <Compile Include="Models\EFModels\Tag.cs" />
+    <Compile Include="Models\Infra\DAHelper.cs" />
     <Compile Include="Models\Infra\HashUtility.cs" />
     <Compile Include="Models\ViewModels\ContactUsVm.cs" />
+    <Compile Include="Models\ViewModels\EditPasswordVm.cs" />
+    <Compile Include="Models\ViewModels\EditProfileVm.cs" />
+    <Compile Include="Models\ViewModels\ForgotPasswordVm.cs" />
+    <Compile Include="Models\ViewModels\LoginVm.cs" />
+    <Compile Include="Models\ViewModels\MemberExts.cs" />
     <Compile Include="Models\ViewModels\RegisterExts.cs" />
     <Compile Include="Models\ViewModels\RegisterVm.cs" />
+    <Compile Include="Models\ViewModels\ResetPasswordVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,12 +246,13 @@
     <Content Include="Views\Index\ContactUs.cshtml" />
     <Content Include="Views\Index\Register.cshtml" />
     <Content Include="Views\Index\Products.cshtml" />
+    <Content Include="Views\Members\Register.cshtml" />
+    <Content Include="Views\Members\RegisterConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
     <Folder Include="Views\ContactUs\" />
-    <Folder Include="Views\Member\" />
     <Folder Include="Views\P020\" />
     <Folder Include="Views\Register\" />
   </ItemGroup>

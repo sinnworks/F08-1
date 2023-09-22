@@ -81,10 +81,6 @@ namespace F08_1.Models.EFModels
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Member>()
-                .Property(e => e.Gender)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Member>()
                 .Property(e => e.PhoneNumber)
                 .IsFixedLength()
                 .IsUnicode(false);
@@ -98,7 +94,7 @@ namespace F08_1.Models.EFModels
                 .IsFixedLength();
 
             modelBuilder.Entity<Member>()
-                .Property(e => e.Password)
+                .Property(e => e.EncryptedPassword)
                 .IsFixedLength();
 
             modelBuilder.Entity<Member>()
