@@ -30,8 +30,18 @@
                 </ul>
                 <div class="memberNav">
                     <ul class="navbar-nav flex-grow-1">
-                        @Html.ActionLink("登入會員", "Login", "Index")
-                        @Html.ActionLink("註冊會員", "Register", "Members", new { area = "" }, new { @class = "nav-link custom-white-text" })
+                        @{
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("登出會員", "Logout", "Members", new { area = "" }, new { @class = "nav-link" })</li>
+                            }
+                            else
+                            {
+                                @Html.ActionLink("登入會員", "Login", "Index")
+                                @Html.ActionLink("註冊會員", "Register", "Members", new { area = "" }, new { @class = "nav-link custom-white-text" })
+                            }
+                        }
+
                         @Html.ActionLink("購物車", "Cart", "Index")
                     </ul>
                 </div>
