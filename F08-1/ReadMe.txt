@@ -37,7 +37,7 @@
 		修改 web.config裡的 defaultUrl
 		add EditProfile action(Get, POST)
 
-[-] 實作變更密碼
+[V] 實作變更密碼
 	add Models/ViewModels/EditPasswordVm.cs
 	modify MembersController
 		add EditPassword action(Get, POST)

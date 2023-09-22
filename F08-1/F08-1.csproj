@@ -176,6 +176,7 @@
     <Compile Include="Models\EFModels\ShoppingCart.cs" />
     <Compile Include="Models\EFModels\Tag.cs" />
     <Compile Include="Models\Infra\DAHelper.cs" />
+    <Compile Include="Models\Infra\EmailHelper.cs" />
     <Compile Include="Models\Infra\HashUtility.cs" />
     <Compile Include="Models\ViewModels\ContactUsVm.cs" />
     <Compile Include="Models\ViewModels\EditPasswordVm.cs" />
@@ -205,9 +206,34 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\123-22-1024x683.jpg" />
+    <Content Include="Images\469.jpg" />
+    <Content Include="Images\5454_G_1563848434317.jpg" />
+    <Content Include="Images\690cc965ce6100892345f9af0550ff77.jpg" />
+    <Content Include="Images\72450fc126cf2862dca8530ad4d7bf2f.jpg" />
+    <Content Include="Images\austin-ban-IS6RwpuEJpY-unsplash.jpg" />
+    <Content Include="Images\bruno-ramos-lara-sz3AWACktLc-unsplash.jpg" />
+    <Content Include="Images\christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg" />
+    <Content Include="Images\Glass-Noodles-Benefits-1.jpg" />
+    <Content Include="Images\hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg" />
+    <Content Include="Images\jason-leung-WmTK_QfDxlE-unsplash.jpg" />
+    <Content Include="Images\kalyani-akella-vCNLO20cuwY-unsplash.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\madison-bracaglia-fcWAwPKpkTU-unsplash.jpg" />
+    <Content Include="Images\pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg" />
+    <Content Include="Images\pawel-czerwinski-oykbZuvajO0-unsplash.jpg" />
+    <Content Include="Images\peijia-li-AIWSvNU38H8-unsplash.jpg" />
+    <Content Include="Images\pylyp-sukhenko-y-XZf_TNRms-unsplash.jpg" />
+    <Content Include="Images\raymond-chiu-pq5-jYkIbM0-unsplash.jpg" />
+    <Content Include="Images\ricky-lk-q8gs-mCYKO4-unsplash.jpg" />
+    <Content Include="Images\stefan-schauberger-cy-H4onG8PI-unsplash.jpg" />
+    <Content Include="Images\yosuke-ota-x_tTO-YBM7s-unsplash %281%29.jpg" />
+    <Content Include="Images\新鮮香菇B.jpg" />
+    <Content Include="Images\金針菇.jpg" />
     <Content Include="ReadMe.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -216,6 +242,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\glightbox.min.js" />
+    <Content Include="Scripts\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -225,7 +253,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\swiper-bundle.min.js" />
+    <Content Include="Scripts\validate.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -256,7 +287,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Views\ContactUs\" />
     <Folder Include="Views\P020\" />
   </ItemGroup>

@@ -9,27 +9,33 @@
     @Scripts.Render("~/bundles/modernizr")
     <style>
         .custom-white-text {
-            color: white;         
+            color: white;
         }
     </style>
+    <link href="~/Content/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("scrumptious", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="container container-fluidxx">
+            
+
+            <a class="navbar-brand" href="">
+                <img src="~/Images/logo.jpg" alt="Scrumptious Logo" class="small-image">
+            </a>
+
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="切換導覽" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li>@Html.ActionLink("首頁", "Index", "Index", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("開始點餐", "Products", "Index", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("餐點類別", "Index", "Categories", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("聯絡我們", "Index", "ContactUs", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <div class="memberNav">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="memberNav d-flex flex-nowrap">
                         @{
                             if (User.Identity.IsAuthenticated)
                             {
@@ -37,19 +43,19 @@
                             }
                             else
                             {
-                                @Html.ActionLink("登入會員", "Login", "Index")
-                                @Html.ActionLink("註冊會員", "Register", "Members", new { area = "" }, new { @class = "nav-link custom-white-text" })
+                                <li>@Html.ActionLink("登入會員", "Login", "Index")</li>
+                                <li>@Html.ActionLink("註冊會員", "Register", "Members", new { area = "" }, new { @class = "nav-link custom-white-text" })</li>
                             }
                         }
 
-                        @Html.ActionLink("購物車", "Cart", "Index")
+                        <li>@Html.ActionLink("購物車", "Cart", "Index")</li>
                     </ul>
                 </div>
             </div>
         </div>
 
     </nav>
-    <div class="container body-content">
+    <div class="container body-content " style="margin-top:7rem;">
         @RenderBody()
         <hr />
         <footer>
