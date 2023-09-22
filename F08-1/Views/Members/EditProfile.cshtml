@@ -1,0 +1,90 @@
+﻿@model F08_1.Models.ViewModels.EditProfileVm
+
+@{
+    ViewBag.Title = "修改基本資料";
+}
+
+<h2>修改基本資料</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>EditProfileVm</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Account, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.Account, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Account, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.EncryptedPassword, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.EncryptedPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EncryptedPassword, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.IsConfirmed, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.IsConfirmed, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.IsConfirmed, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.ConfirmCode, htmlAttributes: new { @class = "form-label col-md-2" })
+            
+                @Html.EditorFor(model => model.ConfirmCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConfirmCode, "", new { @class = "text-danger" })
+            
+        </div>
+
+        <div class="mb-3">
+            <div class="text-end">
+                <input type="submit" value="儲存" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("回到會員中心", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

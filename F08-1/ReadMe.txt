@@ -17,7 +17,7 @@
 		add ActiveRegister(memberId, confirmCode)
 	add Views/Members/ActiveRegister.cshtml
 
-[-]實作 登入/登出網站
+[V]實作 登入/登出網站
 	只有帳密正確而且已正式開通的會員才允許登入, 實作之前, 請先各別建立一個已/未開通的會員記錄,方便測試
 	modify web.config, add Authenthcation node
 	add Models/ViewModels/LoginVm.cs

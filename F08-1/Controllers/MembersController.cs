@@ -390,7 +390,6 @@ namespace BookStore.Site.Controllers
                     DateTime.Now,   // 發行日
                     DateTime.Now.AddDays(2), // 到期日
                     rememberMe,     // 是否續存
-                    roles,          // userdata
                     "/" // cookie位置
                 );
 

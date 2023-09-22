@@ -15,7 +15,14 @@ namespace F08_1.Models.ViewModels
                 Id = member.Id,
                 Email = member.Email,
                 Name = member.Name,
-                PhoneNumber = member.PhoneNumber
+                PhoneNumber = member.PhoneNumber,
+                //Account = member.Account,
+                //EncryptedPassword = member.EncryptedPassword,
+                //Gender = member.Gender,
+                //BirthDate = member.BirthDate,
+                //Address = member.Address
+
+
             };
         }
     }
