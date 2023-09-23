@@ -36,12 +36,13 @@ namespace F08_1.Models.Infra
             var subject = "[新會員確認信]";
             var body = $@"Hello, Dear {name},
 <br />
-請點擊此連結 [<a href='{url}' target='_blank'>的確是我申請會員</a>], 如果您沒有提出申請, 請忽略本信, 謝謝";
+請點擊此連結 [<a href='{url}' target='_blank'>確認驗證</a>], 如果您沒有提出申請, 請忽略本信, 謝謝";
 
             var from = senderEmail;
             var to = email;
 
             SendViaGoogle(from, to, subject, body);
+            
         }
 
         public virtual void SendViaGoogle(string from, string to, string subject, string body)
@@ -49,6 +50,7 @@ namespace F08_1.Models.Infra
             // todo 以下是開發時,測試之用, 只是建立text file, 不真的寄出信
             var path = HttpContext.Current.Server.MapPath("~/files/");
             CreateTextFile(path, from, to, subject, body);
+            SendEmail(senderEmail, password, to, subject, body);
             return;
         }
 
@@ -71,7 +73,7 @@ subject:{subject}
         }
 
 
-        private void SendEmail(string fromEmail, string fromPassword, string toEmail, string subject, string body)
+        public void SendEmail(string fromEmail, string fromPassword, string toEmail, string subject, string body)
         {
             try
             {
@@ -97,7 +99,7 @@ subject:{subject}
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("error");
             }
         }
     }

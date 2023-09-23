@@ -181,7 +181,7 @@
     <Compile Include="Models\ViewModels\ContactUsVm.cs" />
     <Compile Include="Models\ViewModels\EditPasswordVm.cs" />
     <Compile Include="Models\ViewModels\EditProfileVm.cs" />
-    <Compile Include="Models\ViewModels\ForgotPasswordVm.cs" />
+    <Compile Include="Models\ViewModels\ForgetPasswordVm.cs" />
     <Compile Include="Models\ViewModels\LoginVm.cs" />
     <Compile Include="Models\ViewModels\MemberExts.cs" />
     <Compile Include="Models\ViewModels\RegisterExts.cs" />
@@ -284,9 +284,12 @@
     <Content Include="Views\Members\Index.cshtml" />
     <Content Include="Views\Members\EditProfile.cshtml" />
     <Content Include="Views\Members\EditPassword.cshtml" />
+    <Content Include="Views\Members\ForgetPassword.cshtml" />
+    <Content Include="Views\Members\ForgetPasswordConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
     <Folder Include="Views\ContactUs\" />
     <Folder Include="Views\P020\" />
   </ItemGroup>

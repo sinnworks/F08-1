@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace F08_1.Models.ViewModels
 {
-    public class ForgotPasswordVm
+    public class ForgetPasswordVm
     {
         [Display(Name = "帳號")]
         [Required(ErrorMessage = "{0} 必填")]

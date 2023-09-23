@@ -26,7 +26,7 @@
         <div class="mb-3">
             @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "form-label col-md-2" })
 
-            @Html.DropDownList("Gender", ViewData["GenderList"] as SelectList, null, new { @class = "form-control", id = "genderDropdown" })
+            @Html.DropDownListFor(model => model.Gender, (SelectList)ViewBag.Gender, "請選擇性別", new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
         </div>
 

@@ -22,16 +22,23 @@ namespace BookStore.Site.Controllers
 
         public ActionResult Register()
         {
-            var list = new List<SelectListItem>
+            ViewBag.Gender = new SelectList(new List<SelectListItem>
             {
-                new SelectListItem { Value = "0", Text = "female" },
-                new SelectListItem { Value = "1",Text = "male"},
-                new SelectListItem { Value = "2",Text = "Other"}
-            };
-            ViewData["GenderList"] = new SelectList(list,"Value","Text",null);
+                new SelectListItem { Value = "0", Text = "女" },
+                new SelectListItem { Value = "1", Text = "男" },
+                new SelectListItem { Value = "2", Text = "其他" }
+            }, "Value", "Text");
+
+            ViewData["GenderList"] = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem { Value = "0", Text = "女" },
+                new SelectListItem { Value = "1", Text = "男" },
+                new SelectListItem { Value = "2", Text = "其他" }
+            }, "Value", "Text", null);
 
             return View();
         }
+
 
         [HttpPost]
         public ActionResult Register(RegisterVm vm)
@@ -177,13 +184,13 @@ namespace BookStore.Site.Controllers
         }
 
 
-        public ActionResult ForgetPassword()
+        public ActionResult  ForgetPassword()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult ForgetPassword(ForgotPasswordVm vm)
+        [HttpPost]   //不用Authorized因為登入才能找回密碼不合邏輯
+        public ActionResult ForgetPassword(ForgetPasswordVm vm)
         {
             if (!ModelState.IsValid) return View(vm);
 
@@ -432,6 +439,7 @@ namespace BookStore.Site.Controllers
 
 
             // todo 發出確認信
+            new EmailHelper().SendConfirmRegisterEmail("https://localhost:44318/Index/Products", vm.Account, vm.Email);
         }
 
 
