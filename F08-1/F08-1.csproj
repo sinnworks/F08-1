@@ -286,6 +286,7 @@
     <Content Include="Views\Members\EditPassword.cshtml" />
     <Content Include="Views\Members\ForgetPassword.cshtml" />
     <Content Include="Views\Members\ForgetPasswordConfirm.cshtml" />
+    <Content Include="Views\Members\ResetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

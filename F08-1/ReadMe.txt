@@ -62,7 +62,7 @@
 	modify MembersController , add ResetPassword action(httpget action)
 	add /Views/Members/ResetPassword.cshtml(create 範本)
 	modify MembersController , add ResetPassword action(httpPost action)
-	add ConfirmResetPassword.csthml(空白範本)
+	add Index.csthml(空白範本)
 ===========
 前台購物車功能
 [-] 建立商品清單頁

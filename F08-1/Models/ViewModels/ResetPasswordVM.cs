@@ -18,7 +18,7 @@ namespace F08_1.Models.ViewModels
 
         [Display(Name = "確認密碼")]
         [Required(ErrorMessage = DAHelper.Required)]
-        [StringLength(1000, ErrorMessage = DAHelper.StringLength)]
+        [StringLength(70, ErrorMessage = DAHelper.StringLength)]
         [Compare(nameof(Password), ErrorMessage = DAHelper.Compare)]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
