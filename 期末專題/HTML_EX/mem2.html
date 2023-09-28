@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <!-- ... 省略其他头部内容 ... -->
+  </head>
+  <body>
+    <!-- 上半部分，包括导航链接和通知栏 -->
+    <div>
+      <!-- 导航链接和通知栏的内容，与你的原始代码相同 -->
+    </div>
+
+    <!-- 下半部分，用于显示不同内容 -->
+    <div class="container">
+      <!-- 添加一个容器来显示不同的内容 -->
+      <div id="content-container">
+        <!-- 初始内容，可以是你网站的首页内容 -->
+        <h1>欢迎访问我们的网站！</h1>
+        <p>这是网站的首页内容。</p>
+      </div>
+    </div>
+
+    <!-- JavaScript代码，用于切换内容 -->
+    <script>
+      // JavaScript 代码，用于处理链接点击事件
+      const accountSettingsLink = document.querySelector(
+        "#account-settings-link"
+      );
+      const orderHistoryLink = document.querySelector("#order-history-link");
+      const changePasswordLink = document.querySelector(
+        "#change-password-link"
+      );
+      const contentContainer = document.querySelector("#content-container");
+
+      // 当帳戶設定链接被点击时显示不同的内容
+      accountSettingsLink.addEventListener("click", () => {
+        // 在这里加载并显示帳戶設定的内容，可以是表单等
+        contentContainer.innerHTML = `
+          <!-- 帳戶設定的内容 -->
+          <h1>帳戶設定</h1>
+          <p>这是帳戶設定的内容。</p>
+          <!-- 你可以在这里添加帳戶設定的表单 -->
+        `;
+      });
+
+      // 当訂餐歷史链接被点击时显示不同的内容
+      orderHistoryLink.addEventListener("click", () => {
+        // 在这里加载并显示訂餐歷史的内容，可以是订单历史列表等
+        contentContainer.innerHTML = `
+          <!-- 訂餐歷史的内容 -->
+          <h1>訂餐歷史</h1>
+          <p>这是訂餐歷史的内容。</p>
+          <!-- 你可以在这里添加订单历史的列表等 -->
+        `;
+      });
+
+      // 当變更密碼链接被点击时显示不同的内容
+      changePasswordLink.addEventListener("click", () => {
+        // 在这里加载并显示变更密碼的内容，可以是密码更改表单等
+        contentContainer.innerHTML = `
+          <!-- 變更密碼的内容 -->
+          <h1>變更密碼</h1>
+          <p>这是變更密碼的内容。</p>
+          <!-- 你可以在这里添加密码更改的表单 -->
+        `;
+      });
+    </script>
+  </body>
+</html>

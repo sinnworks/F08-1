@@ -1,77 +1,76 @@
 ﻿@model F08_1.Models.ViewModels.ContactUsVm
 
 @{
-    ViewBag.Title = "聯絡我們";
+    ViewBag.Title = "ContactUs";
 }
 
-<h2>聯絡我們</h2>
+ 
+<h2>ContactUs</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        @using (Html.BeginForm("ContactUs", "Index", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "form-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-}
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Suggestion, htmlAttributes: new { @class = "form-label col-md-2" })
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.Suggestion, new { htmlAttributes = new { @class = "form-control" } })*@
+                        <textarea class="form-control" style="height:150px; resize:none" name="Suggestion"></textarea>
+                        @Html.ValidationMessageFor(model => model.Suggestion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-<div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "form-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-        </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" name="File" clss="form-control" />
+                        @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Suggestion, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Suggestion, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Suggestion, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="mb-3">
-        @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="mb-3">
-        @Html.LabelFor(model => model.Suggestion, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Suggestion, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Suggestion, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="mb-3">
-        @Html.LabelFor(model => model.File, htmlAttributes: new { @class = "form-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" id="File" name="File" class="form-control" />
-            @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="mb-3">
-        <div class="text-end">
-            <input type="submit" value="提交" class="btn btn-primary" />
-        </div>
+    <div class="col-md-4">
+        <p class="m-4">地址: 台北市富裕區有錢路</p>
+        <p class="m-4">電話: 02-12345678</p>
+        <p class="m-4">傳真: 02-12345688</p>
+        <p class="m-4">電子郵件: scrumptious@gmail</p>
     </div>
 </div>
 
-@*<div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>*@
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

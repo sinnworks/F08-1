@@ -63,34 +63,5 @@
 	add /Views/Members/ResetPassword.cshtml(create 範本)
 	modify MembersController , add ResetPassword action(httpPost action)
 	add Index.csthml(空白範本)
-===========
-前台購物車功能
-[-] 建立商品清單頁
-	add ProductIndexVm.cs
-	add ProductExts,撰寫擴充方法
-	add ProductsController(新增空白controller), add Index action
-		add Index.cshtml(list template), 
-		- 撰寫js,實作加入購物車功能Default
-		- 移除 AddNew hyperlink
-		- 只有在已登入狀況下,才顯示 'add to cart' button
 
-[-]顯示購物車資訊, 實作增減數量的功能
-	add CartVm.cs ,CartItemVm ,顯示一筆購物車資料及其明細
-	add CartController, 實作將商品加入購物車的功能
-		AddItem action, 將商品加入購物車
-		Info action, 顯示購物車內容, 此時還沒實作數量的增減功能
-
-	modify app_start/RouteConfig.cs , 預設為 Products/Index
-	modify _Layout.cshtml, 加入購物車的連結
-	modify CartController
-		add UpdateItem action
-	add Cart/ Info view pge(用 list 範本, model 是 CartVm)
-
-[-]實作 結帳作業
-	- add enum OrderStatus
-	- add CheckoutVm.cs
-	- modify CartController, add Checkout action
-	- add Checkout view page(用create 範本, model是 CheckoutVm)
-	- add ConfirmCheckout view page(空白template)
-
-[working on]發confirm email給新註冊會員
+[-]發confirm email給新註冊會員

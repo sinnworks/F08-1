@@ -249,7 +249,7 @@ namespace BookStore.Site.Controllers
             var db = new AppDbContext();
 
             // 檢查 memberId, confirmCode 是否正確
-            var memberInDb = db.Members.FirstOrDefault(m => m.Id == memberId &&
+            var memberInDb = db.Members.FirstOrDefault(m => m.Id == memberId &&   //大小寫不一樣還是可以找得到
                                                         m.IsConfirmed == true &&
                                                         m.ConfirmCode == confirmCode);
             if (memberInDb == null) return; // 不動聲色的離開

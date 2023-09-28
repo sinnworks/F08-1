@@ -3,113 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scrumptious-購物車</title>
+    <title>scrumptious</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            margin-top: 60px;
-        }
+       /* 通知欄的樣式 */
+.notification-bar {
+    background-color: #f9423a; /* 紅色背景 */
+    padding: 10px; /* 設置適當的填充 */
+}
 
-        .qty {
-            width: 50px;
-            text-align: center;
-        }
+/* 導覽列的樣式 */
+.navbar {
+    background-color: #fff0e0; /* 淺粉色背景 */
+}
 
-        .product {
-            max-width: 80px;
-            object-fit: cover;
+/* 導覽列中連結的文字顏色 */
+.navbar-nav .nav-link {
+    color: #f9423a; /* 黑色文字 */
+}
 
-        }
+/* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+.navbar-nav .nav-link.active {
+    color: #f9423a;   
+}
 
-        .products h6 {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
+.memberNav a {
+    color: #f9423a;   
+}
 
-        .bg-primary {
-            /* background-color: green !important; */
-            如果要改背景顏色, 請自行在這裡指定
-        }
+/* 麵包屑的文字顏色 */
+.breadcrumb-item a {
+    color: #f9423a;  
+}
 
-        .nav-link {
-            /* color: red !important; 如果要改連結顏色,請自行在這裡指定 */
-        }
+.marquee-section {
+    white-space: nowrap; /* 讓文字不換行 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    color: #f9423a;
+}
 
-        .customBtn {
-            /* color:red; */
-        }
-    </style>
+.marquee-section__list {
+    display: inline-block; /* 將元素水平排列 */
+    padding-right: 50px; /* 增加元素之間的間距 */
+    animation: marquee 45s linear infinite; /* 使用動畫效果，無限循環 */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* 起始位置：不移動 */
+    }
+    100% {
+        transform: translateX(-100%); /* 結束位置：向左移動 100% */
+    }
+}
+
+#portfolio-flters li[data-filter="*"] {
+    background-color: #E12490; /* ALL的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-service"] {
+    background-color: #00bc70; /* 服務的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-environment"] {
+    background-color: #ff4438; /* 環境的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-products"] {
+    background-color: #00b2e3; /* 餐點的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+</style>
 </head>
+
 <body>
-<!--導覽列 begin-->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">scrumptious</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">菜單</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categoryShoes.htmlcategoryShoes.html">開始點餐</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">聯絡我們</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                類別
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">肉類</a></li>
-              <li><a class="dropdown-item" href="#">菜類</a></li>
-              <li><a class="dropdown-item" href="#">火鍋料</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">湯底</a></li>
-            </ul>
-          </li>
-        
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light customBtn" type="submit">Search</button>
-        </form> -->
-        <div class="memberNav">
-            <a href="#" class="text-white">登入會員</a>
-            <a href="#" class="text-white">註冊會員</a>
-            <a href="#" class="text-white">購物車</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-<!--導覽列 end-->
-
-<div>
+  <div>
+    <!-- 第一列：通知欄 -->
     
-        <div class="">
-            <class="form-label">★請至scrumptious(台北市富裕區有錢路)取餐</class=>  
-            <br/>
-            <class="form-label">★電話:02-2154-7841</class=>  
-            <br/>
-            <class="form-label">★餐點為現點現做，請提前預訂</class=>            
-        </div>
-            <div class="row">
-                <div class="col-12 text-end"><input type="button" class="btn btn-danger" value="結帳"></div>
+        
+            <div class="notification-bar">
+                <a href="#" class="notification-bar__text">
+                    註冊即送價值$100優惠券
+                </a>
             </div>
-        </div>
+        
+    
+
+    <!-- 第二列：導覽欄 -->
+    
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+
+                </a>
 
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">開始點餐</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">菜單介紹</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                    <img src="images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
+
+                    <div class="memberNav ms-auto">
+                        <a href="#" class="text-dark">登入會員</a>
+                        <a href="#" class="text-dark">註冊會員</a>
+                        <a href="#" class="text-dark">購物車</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
+        />
+      </symbol>
+      <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+        <path
+          d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+        />
+      </symbol>
+      <symbol
+        id="exclamation-triangle-fill"
+        fill="currentColor"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+      </symbol>
+    </svg>
+
+    <div
+      class="alert alert-success d-flex align-items-center orderinfo"
+      role="alert"
+    >
+      <svg
+        class="bi flex-shrink-0 me-2"
+        width="24"
+        height="24"
+        role="img"
+        aria-label="Success:"
+      >
+        <use xlink:href="#check-circle-fill" />
+      </svg>
+      <div>您已完成點餐，為避免餐點風味變質，請準時取餐。</div>
     </div>
-</div>
-</body>
+
+    <p>&copy; <span id="currentYear"></span> - scrumptious</p>
+
+    <script>
+      // 獲取當前日期的年份
+      const currentYear = new Date().getFullYear();
+
+      // 將年份插入到HTML中
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+  </body>
 </html>

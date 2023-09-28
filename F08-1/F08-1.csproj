@@ -148,6 +148,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\P020Controller.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -184,6 +185,7 @@
     <Compile Include="Models\ViewModels\ForgetPasswordVm.cs" />
     <Compile Include="Models\ViewModels\LoginVm.cs" />
     <Compile Include="Models\ViewModels\MemberExts.cs" />
+    <Compile Include="Models\ViewModels\ProductIndexVm.cs" />
     <Compile Include="Models\ViewModels\RegisterExts.cs" />
     <Compile Include="Models\ViewModels\RegisterVm.cs" />
     <Compile Include="Models\ViewModels\ResetPasswordVM.cs" />
@@ -213,25 +215,41 @@
     <Content Include="Images\123-22-1024x683.jpg" />
     <Content Include="Images\469.jpg" />
     <Content Include="Images\5454_G_1563848434317.jpg" />
-    <Content Include="Images\690cc965ce6100892345f9af0550ff77.jpg" />
     <Content Include="Images\72450fc126cf2862dca8530ad4d7bf2f.jpg" />
+    <Content Include="Images\alyson-mcphee-yWG-ndhxvqY-unsplash.jpg" />
+    <Content Include="Images\ameya-purohit-sDPG2G9vsHQ-unsplash.jpg" />
+    <Content Include="Images\andres-carreno-RqS7r2CzL68-unsplash.jpg" />
+    <Content Include="Images\anton-hgQLFwCDRQM-unsplash.jpg" />
     <Content Include="Images\austin-ban-IS6RwpuEJpY-unsplash.jpg" />
+    <Content Include="Images\Brown Modern Timeline Chart Graph.jpg" />
     <Content Include="Images\bruno-ramos-lara-sz3AWACktLc-unsplash.jpg" />
     <Content Include="Images\christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg" />
+    <Content Include="Images\ella-olsson-7EhPbdAQG-s-unsplash.jpg" />
+    <Content Include="Images\farhad-ibrahimzade-4t-5kqnKIeY-unsplash.jpg" />
     <Content Include="Images\Glass-Noodles-Benefits-1.jpg" />
     <Content Include="Images\hitesh-dewasi-5JwBbnyZzfc-unsplash.jpg" />
     <Content Include="Images\jason-leung-WmTK_QfDxlE-unsplash.jpg" />
     <Content Include="Images\kalyani-akella-vCNLO20cuwY-unsplash.jpg" />
+    <Content Include="Images\logo-removebg-preview1.png" />
     <Content Include="Images\logo.jpg" />
+    <Content Include="Images\maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg" />
     <Content Include="Images\madison-bracaglia-fcWAwPKpkTU-unsplash.jpg" />
+    <Content Include="Images\mk-s-tHHFiw6GNEU-unsplash.jpg" />
     <Content Include="Images\pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg" />
     <Content Include="Images\pawel-czerwinski-oykbZuvajO0-unsplash.jpg" />
     <Content Include="Images\peijia-li-AIWSvNU38H8-unsplash.jpg" />
     <Content Include="Images\pylyp-sukhenko-y-XZf_TNRms-unsplash.jpg" />
     <Content Include="Images\raymond-chiu-pq5-jYkIbM0-unsplash.jpg" />
+    <Content Include="Images\ricardo-gomez-angel-I5XthC605H0-unsplash.jpg" />
     <Content Include="Images\ricky-lk-q8gs-mCYKO4-unsplash.jpg" />
+    <Content Include="Images\sam-cernik-QF5ykNN8Udg-unsplash.jpg" />
+    <Content Include="Images\shopnow.jpg" />
     <Content Include="Images\stefan-schauberger-cy-H4onG8PI-unsplash.jpg" />
+    <Content Include="Images\syd-wachs-epqNIYI6S7E-unsplash.jpg" />
+    <Content Include="Images\toa-heftiba-oQvESMKUkzM-unsplash.jpg" />
+    <Content Include="Images\vicko-mozara-m82uh_vamhg-unsplash.jpg" />
     <Content Include="Images\yosuke-ota-x_tTO-YBM7s-unsplash %281%29.jpg" />
+    <Content Include="Images\you-le-J_QrPblN2Z0-unsplash.jpg" />
     <Content Include="Images\新鮮香菇B.jpg" />
     <Content Include="Images\金針菇.jpg" />
     <Content Include="ReadMe.txt" />
@@ -274,7 +292,6 @@
     <Content Include="Views\Index\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Index\Login.cshtml" />
-    <Content Include="Views\Index\ContactUs.cshtml" />
     <Content Include="Views\Index\Register.cshtml" />
     <Content Include="Views\Index\Products.cshtml" />
     <Content Include="Views\Members\Register.cshtml" />
@@ -287,6 +304,8 @@
     <Content Include="Views\Members\ForgetPassword.cshtml" />
     <Content Include="Views\Members\ForgetPasswordConfirm.cshtml" />
     <Content Include="Views\Members\ResetPassword.cshtml" />
+    <Content Include="Views\Members\ConfirmResetPassword.cshtml" />
+    <Content Include="Views\Index\ContactUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

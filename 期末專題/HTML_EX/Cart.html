@@ -3,98 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scrumptious-購物車</title>
+    <title>scrumptious-註冊</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <style>
-        body {
-            margin-top: 60px;
-        }
+      body {
+    background-color: #fff0e0; 
+    color: #f9423a;
+  }
+.notification-bar {
+    background-color: #f9423a; /* 紅色背景 */
+    text-align: center; /* 把字置中 */
+    
+  
+}
 
-        .qty {
-            width: 50px;
-            text-align: center;
-        }
+.notification-bar__text {
+    color: #fff0e0;
+    text-decoration: none; /* 把字的底線去掉 */  
+}
 
-        .product {
-            max-width: 80px;
-            object-fit: cover;
 
-        }
+/* 導覽列的樣式 */
+.navbar {
+    
+    border: 1px solid #f9423a; /* 設置邊框，顏色為紅色 */
+    border-radius: 0; /* 可以設置邊框的圓角，這裡是0，可以根據需要調整 */
+    background-color: #fff0e0;
+}
 
-        .products h6 {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
-        }
+/* 導覽列中連結的文字顏色 */
+.navbar-nav .nav-link {
+    color: #f9423a; /* 黑色文字 */
+}
 
-        .bg-primary {
-            /* background-color: green !important; */
-            如果要改背景顏色, 請自行在這裡指定
-        }
+/* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+.navbar-nav .nav-link.active {
+    color: #f9423a;   
+}
 
-        .nav-link {
-            /* color: red !important; 如果要改連結顏色,請自行在這裡指定 */
-        }
+.navbar-nav a, .memberNav a {
+    color: #f9423a !important;
+    text-decoration: none;
+}
 
-        .customBtn {
-            /* color:red; */
-        }
-    </style>
+.btn-primary {
+    background-color: #f9423a;
+    color:#fff0e0;
+    border: none;
+}
+
+/* 照片品名等文字颜色 */
+.table td,
+.table h6 {
+    color: #f9423a;
+    
+}
+
+/* 红色的文字链接 */
+.table a {
+    color: #f9423a;
+    
+}
+
+.table {
+    background-color: #fff;
+}
+
+</style>
 </head>
 <body>
-<!--導覽列 begin-->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">scrumptious</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">菜單</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categoryShoes.htmlcategoryShoes.html">開始點餐</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">聯絡我們</a>
-          </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                類別
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">肉類</a></li>
-              <li><a class="dropdown-item" href="#">菜類</a></li>
-              <li><a class="dropdown-item" href="#">火鍋料</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">湯底</a></li>
-            </ul>
-          </li>
+    <div>
+        <!-- 第一列：通知欄 -->
         
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light customBtn" type="submit">Search</button>
-        </form> -->
-        <div class="memberNav">
-            <a href="#" class="text-white">登入會員</a>
-            <a href="#" class="text-white">註冊會員</a>
-            <a href="#" class="text-white">購物車</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-<!--導覽列 end-->
+            
+                <div class="notification-bar">
+                    <a href="#" class="notification-bar__text">
+                        註冊即送價值$100優惠券
+                    </a>
+                </div>
+            
+        
+    
+        <!-- 第二列：導覽欄 -->
+        
+            <nav class="navbar navbar-expand-md navbar-light">
+                <div class="container-fluid">
+    
+                    <a class="navbar-brand" href="#">
+    
+                    </a>
+    
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+    
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">首頁</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">開始點餐</a>
+                            </li>
+    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    餐點類別
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">肉類</a></li>
+                                    <li><a class="dropdown-item" href="#">菜類</a></li>
+                                    <li><a class="dropdown-item" href="#">火鍋料</a></li>
+                                    <li><div class="dropdown-divider"></div></li>
+                                    <li><a class="dropdown-item" href="#">湯底</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">聯絡我們</a>
+                            </li>
+                        </ul>
+    
+                        <div class="memberNav ms-auto">
+                            <a href="#" class="text-dark">登入會員</a>
+                            <a href="#" class="text-dark">註冊會員</a>
+                            <a href="#" class="text-dark">購物車</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
 
-<div>
+
+    </div>
+
+
     <div class="m-3">
 
         <div class="container">
@@ -161,11 +207,7 @@
                 <input type="date" />
                 
             </div>
-            <div class="col-md-6">
-                
-                <label class="form-label">取餐時間</label>
-                <input type="time" />
-            </div>
+            
             <div class="col-md-8">
                 <label for="inputGender" class="form-label">優惠券</label>
                 <select id="inputGender" class="form-select">
@@ -181,20 +223,25 @@
             <textarea class="form-control" style="height:150px;" id="floatingInput" placeholder=""></textarea>
         </div>  
         <br/>
-        <div class="">
+        <div class="cartItem">
             <class="form-label">★請至scrumptious(台北市富裕區有錢路)取餐</class=>  
             <br/>
             <class="form-label">★電話:02-2154-7841</class=>  
             <br/>
             <class="form-label">★餐點為現點現做，請提前預訂</class=>            
-        </div>
-            <div class="row">
-                <div class="col-12 text-end"><input type="button" class="btn btn-danger" value="結帳"></div>
-            </div>
-        </div>
-
-
+        </div>            
+        <button style="background-color: #f9423a; color: #fff0e0; border: none; border-radius: 10px; padding: 8px 10px;">結帳</button>                                  
     </div>
-</div>
+
+    <p>&copy; <span id="currentYear"></span> - scrumptious</p>
+
+    <script>
+      // 獲取當前日期的年份
+      const currentYear = new Date().getFullYear();
+    
+      // 將年份插入到HTML中
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+
 </body>
 </html>

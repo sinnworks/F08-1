@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrumptious</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+       /* 通知欄的樣式 */
+.notification-bar {
+    background-color: #f9423a; /* 紅色背景 */
+    padding: 10px; /* 設置適當的填充 */
+}
+
+/* 導覽列的樣式 */
+.navbar {
+    background-color: #fff0e0; /* 淺粉色背景 */
+}
+
+/* 導覽列中連結的文字顏色 */
+.navbar-nav .nav-link {
+    color: #f9423a; /* 黑色文字 */
+}
+
+/* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+.navbar-nav .nav-link.active {
+    color: #f9423a;   
+}
+
+.memberNav a {
+    color: #f9423a;   
+}
+
+/* 麵包屑的文字顏色 */
+.breadcrumb-item a {
+    color: #f9423a;  
+}
+
+.marquee-section {
+    white-space: nowrap; /* 讓文字不換行 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    color: #f9423a;
+}
+
+.marquee-section__list {
+    display: inline-block; /* 將元素水平排列 */
+    padding-right: 50px; /* 增加元素之間的間距 */
+    animation: marquee 45s linear infinite; /* 使用動畫效果，無限循環 */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* 起始位置：不移動 */
+    }
+    100% {
+        transform: translateX(-100%); /* 結束位置：向左移動 100% */
+    }
+}
+
+#portfolio-flters li[data-filter="*"] {
+    background-color: #E12490; /* ALL的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-service"] {
+    background-color: #00bc70; /* 服務的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-environment"] {
+    background-color: #ff4438; /* 環境的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-products"] {
+    background-color: #00b2e3; /* 餐點的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+</style>
+</head>
+
+<body>
+  <div>
+    <!-- 第一列：通知欄 -->
+    
+        
+            <div class="notification-bar">
+                <a href="#" class="notification-bar__text">
+                    註冊即送價值$100優惠券
+                </a>
+            </div>
+        
+    
+
+    <!-- 第二列：導覽欄 -->
+    
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">開始點餐</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">菜單介紹</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                    <img src="images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
+
+                    <div class="memberNav ms-auto">
+                        <a href="#" class="text-dark">登入會員</a>
+                        <a href="#" class="text-dark">註冊會員</a>
+                        <a href="#" class="text-dark">購物車</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+    <div class="m-3">
+
+        <div class="container">
+            <div class="row">
+                <h3 class="fw-bolder">確認訂購資訊</h3>                
+                <table class="table table-striped table-bordered align-middle products">
+                    <thead class="table-light fw-bolder">
+                    <tr>
+                        <td>照片</td>
+                        <td>品名</td>
+                        <td class="text-end ps-4 pe-4">單價</td>
+                        <td class="text-end ps-4 pe-4">數量</td>
+                        <td class="text-end ps-4 pe-4">小計</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--單一商品 begin-->
+                    <tr>
+                        <td width="10%"><img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg"
+                                             class="img-fluid rounded product"></td>
+                        <td width="80%">
+                            <h6>麻辣鍋套餐</h6>
+                        </td>
+                        <td class="text-end ps-4 pe-4">
+                            2,200
+                        </td>
+                        <td class="text-end ps-4 pe-4" nowrap>
+                          <h6>2</h6>
+                        </td>
+                        <td class="text-end ps-4 pe-4">
+                            4,600
+                        </td>
+                    </tr>
+                    <!--單一商品 end-->
+                    </tbody>
+                    
+                    <!--總計 begin-->
+                    <tr>
+                        <td colspan="5" class="text-end">
+                            <h6 id="totalPanel">總計: 4,600</h6>
+                        </td>
+                    </tr>
+                    <!--總計 end-->
+                </table>
+
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">取餐日期:</label>
+              <span>2023/09/05</span>
+          </div>
+          
+          <div class="col-md-6">
+            <label class="form-label">取餐時間:</label>
+            <span>13:45</span>
+        </div>
+        
+        <div class="col-md-6">
+            <label class="form-label">優惠券:</label>
+            <span></span>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">備註:</label>
+            <span>13:45</span>
+        </div>
+        <br/>
+        <div class="">
+            <class="form-label">★請至scrumptious(台北市富裕區有錢路)取餐</class=>  
+            <br/>
+            <class="form-label">★電話:02-2154-7841</class=>  
+            <br/>
+            <class="form-label">★餐點為現點現做，請提前預訂</class=>            
+        </div>
+            <div class="row">
+                <div class="col-12 text-start"><input type="button" class="btn btn-danger" value="確認訂單"></div>
+            </div>
+        </div>
+
+
+    </div>
+    <p>&copy; <span id="currentYear"></span> - scrumptious</p>
+
+    <script>
+      // 獲取當前日期的年份
+      const currentYear = new Date().getFullYear();
+    
+      // 將年份插入到HTML中
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+</body>
+</html>

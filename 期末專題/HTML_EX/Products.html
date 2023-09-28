@@ -1,212 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>scrumptious</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
     <style>
-      body{
-        margin-top: 80px;
-      }
-      .prodImg{
-            border-radius: 20px !important;
-        }
-        .otherProduct {
-            max-width: 120px;
-            object-fit: cover;
+       /* 通知欄的樣式 */
+.notification-bar {
+    background-color: #f9423a; /* 紅色背景 */
+    padding: 10px; /* 設置適當的填充 */
+}
 
-        }
-        otherProducts h6{
-            font-weight: 700;
-            color: #333;
-            margin-bottom:20px;
-            font-size: 5.4rem;
-        }
-        .hotProducts{
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-        }
-      </style>
+/* 導覽列的樣式 */
+.navbar {
+    background-color: #fff0e0; /* 淺粉色背景 */
+}
+
+/* 導覽列中連結的文字顏色 */
+.navbar-nav .nav-link {
+    color: #f9423a; /* 黑色文字 */
+}
+
+/* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+.navbar-nav .nav-link.active {
+    color: #f9423a;   
+}
+
+.memberNav a {
+    color: #f9423a;   
+}
+
+/* 麵包屑的文字顏色 */
+.breadcrumb-item a {
+    color: #f9423a;  
+}
+
+.marquee-section {
+    white-space: nowrap; /* 讓文字不換行 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    color: #f9423a;
+}
+
+.marquee-section__list {
+    display: inline-block; /* 將元素水平排列 */
+    padding-right: 50px; /* 增加元素之間的間距 */
+    animation: marquee 45s linear infinite; /* 使用動畫效果，無限循環 */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* 起始位置：不移動 */
+    }
+    100% {
+        transform: translateX(-100%); /* 結束位置：向左移動 100% */
+    }
+}
+
+#portfolio-flters li[data-filter="*"] {
+    background-color: #E12490; /* ALL的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-service"] {
+    background-color: #00bc70; /* 服務的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-environment"] {
+    background-color: #ff4438; /* 環境的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-products"] {
+    background-color: #00b2e3; /* 餐點的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+</style>
 </head>
+
 <body>
-    <!-- 導覽列開始 -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-      <div class="container container-fluidxx">
-        <a class="navbar-brand" href="#">scrumptious</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">首頁</a>
-            </li>              
-            <li class="nav-item">
-              <a class="nav-link" href="#">開始點餐</a>
-            </li>
-          </li>
-          
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                餐點類別
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">肉類</a></li>
-                <li><a class="dropdown-item" href="#">菜類</a></li>
-                <li><a class="dropdown-item" href="#">火鍋料</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">湯底</a></li>
-              </ul>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">聯絡我們</a>
-              </li> 
-          </ul>
-          
-          <div class="memberNav">
-            <a href="#" class="text-dark">登入會員</a>
-            <a href="#" class="text-dark">註冊會員</a>
-            <a href="#" class="text-dark">購物車</a>
-
-          </div>
-        </div>
-      </div>
-    </nav>
-      <!-- 導覽列結束 -->
-      <div class="container">
-      <!-- 麵包屑開始 -->
-        <div class="row">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">首頁</a></li>
-              <li class="breadcrumb-item"><a href="#">開始點餐</a></li>
-              <li class="breadcrumb-item active" aria-current="page">產品</li>
-            </ol>
-          </nav>
-      <!-- 麵包屑結束 -->
-      <div>
-
-            <div class="row">
-            <h1 class="fw-bolder">熱銷商品
-                <small class="fw-normal fst-italic"></small>
-            </h1>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-3 col-md-6 ">
-            <div class="card">
-              <img src="images/raymond-chiu-pq5-jYkIbM0-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
-              <div class="card-body">
-                <h5 class="card-title">酸菜白肉鍋</h5>
-                <p class="card-text">scrumptious對白菜品質很講究，以古法自然醃漬發酵20多天，酸菜白肉鍋湯頭酸而不嗆、口感溫和，還有濃濃的大骨湯味，且配料相當豐富，採用道地東北高煙囪火鍋，每一口都吃得到豬骨的香與雞骨的甜，搭配酸菜微酸的口感，暖胃又舒心！</p>
-                <a href="#" class="btn btn-primary">加入購物車</a>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-lg-3 col-md-6 ">
-            <div class="card">
-              <img src="images/ricky-lk-q8gs-mCYKO4-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
-              <div class="card-body">
-                <h5 class="card-title">A5和牛</h5>
-                <p class="card-text">scrumptious嚴選最佳日本和牛肉，直接空運來台，A5等級信譽保證。美麗色澤、細緻油花</p>
-                <a href="#" class="btn btn-primary">加入購物車</a>
-              </div>
-            </div>
-
-          </div>
-                    <div class="col-lg-3 col-md-6 ">
-            <div class="card">
-              <img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg" class="card-img-top" alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg">
-              <div class="card-body">
-                <h5 class="card-title">麻辣鍋</h5>
-                <p class="card-text">scrumptious的麻辣鍋「重麻不重辣」，採用四川特級青花椒，搭配中藥五行，在濕熱的氣候下讓身體不易產生燥熱感。</p>
-                <a href="#" class="btn btn-primary">加入購物車</a>
-              </div>
-            </div>
-  
-          </div>
-
-
-        </div>
-
+  <div>
+    <!-- 第一列：通知欄 -->
+    
         
-      </div>
-  
-        </div>
-        <div class="row">
-            <h3 class="mt-5 fw-bolder">更多商品</h3>
-            <table class="table otherProducts">
-                <!-- <thread>
-                    <tr>
-                        <td>a</td>
-                        <td>b</td>
-                    </tr>
-                </thread>   -->
-                <tbody>
-                    <tr>
-                        <td><img src="images/123-22-1024x683.jpg" class="img-fluid rounded otherProduct"></td>
-                        <td width="90%">
-                        
-                            <h6 classxx="fw-bolder text-primary">蛋餃</h6>
-                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
-                            <p>NT$ 100
-                                <a href="#" class="btn btn-primary">加入購物車</a>
-                            </p>
-                    </tr>
-                    <tr>
-                        <td><img src="images/469.jpg" class="img-fluid rounded otherProduct"></td>
-                        <td width="90%">
-                        
-                            <h6 classxx="fw-bolder text-primary">鵪鶉蛋</h6>
-                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
-                            <p>NT$ 80
-                                <a href="#" class="btn btn-primary">加入購物車</a>
-                            </p>
-                    </tr>
-                    <tr>
-                        <td><img src="images/5454_G_1563848434317.jpg" class="img-fluid rounded otherProduct"></td>
-                        <td width="90%">
-                        
-                            <h6 classxx="fw-bolder text-primary">新竹貢丸</h6>
-                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
-                            <p>NT$ 120
-                                <a href="#" class="btn btn-primary">加入購物車</a>
-                            </p>
-                    </tr>
-                    <tr>
-                        <td><img src="images/690cc965ce6100892345f9af0550ff77.jpg" class="img-fluid rounded otherProduct"></td>
-                        <td width="90%">
-                        
-                            <h6 classxx="fw-bolder text-primary">角螺</h6>
-                            <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
-                            <p>NT$ 80
-                                <a href="#" class="btn btn-primary">加入購物車</a>
-                            </p>
-                    </tr>
-                    <tr>
-                      <td><img src="images/新鮮香菇B.jpg" class="img-fluid rounded otherProduct"></td>
-                      <td width="90%">
-                      
-                          <h6 classxx="fw-bolder text-primary">新鮮香菇</h6>
-                          <p>Lorem ipsum dolor sit amet consecaecati sed molestias soluta. Eligendi, est voluptatum consectetur pariatur porro aut mollitia soluta qui itaque...</p>
-                          <p>NT$ 350
-                              <a href="#" class="btn btn-primary">加入購物車</a>
-                          </p>
-                  </tr>
-                </tbody>
-            </table>
+            <div class="notification-bar">
+                <a href="#" class="notification-bar__text">
+                    註冊即送價值$100優惠券
+                </a>
+            </div>
+        
+    
 
-         <nav aria-label="Page navigation example">
-          <ul class="pagination justify content-center">
-            <li class="page-item disabled"><a class="page-link" href="#"></a></li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">下一頁</a></li>
-          </ul>
-         </nav>           
-</body>
+    <!-- 第二列：導覽欄 -->
+    
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">開始點餐</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">菜單介紹</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                    <img src="images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
+
+                    <div class="memberNav ms-auto">
+                        <a href="#" class="text-dark">登入會員</a>
+                        <a href="#" class="text-dark">註冊會員</a>
+                        <a href="#" class="text-dark">購物車</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+      
+      <div class="container">
+        <!-- 輪播開始 -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg" alt="..." style="height: 70vh; object-fit: cover;" class="d-block w-100"> 
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+           
+            <div class="carousel-item">
+              <img src="images/jason-leung-WmTK_QfDxlE-unsplash.jpg" style="height: 70vh; object-fit: cover;" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- 輪播結束 -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <h1 class="fw-bolder">
+          熱銷商品
+          <small class="fw-normal fst-italic"></small>
+        </h1>
+      </div>
+
+      <div class="row">
+         <div class="col-lg-4 col-md-6 brc">
+          <div class="card">
+            <img
+              src="images/jason-leung-WmTK_QfDxlE-unsplash.jpg"
+              class="card-img-top"
+              alt="images/jason-leung-WmTK_QfDxlE-unsplash.jpg"
+            />
+            <div class="card-body">
+              <h5 class="card-title">A5和牛</h5>
+
+              <a href="#" class="btn custom-button">加入購物車</a>
+            </div>
+          </div>
+        </div>
+         <div class="col-lg-4 col-md-6 brc">
+          <div class="card">
+            <img
+              src="images/ricky-lk-q8gs-mCYKO4-unsplash.jpg"
+              class="card-img-top"
+              alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg"
+            />
+            <div class="card-body">
+              <h5 class="card-title">板腱牛</h5>
+
+              <a href="#" class="btn custom-button">加入購物車</a>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-lg-4 col-md-6 brc">
+          <div class="card">
+            <img
+              src="images/peijia-li-AIWSvNU38H8-unsplash.jpg"
+              class="card-img-top"
+              alt="images/ben-wicks-iDCtsz-INHI-unsplash.jpg"
+            />
+            <div class="card-body">
+              <h5 class="card-title">麻辣鍋</h5>
+
+              <a href="#" class="btn custom-button">加入購物車</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <img src="images/shopnow.jpg" class="img-fluid" alt="shopnow" />
+        </div>
+
+         <div class="col-lg-4 col-md-6 brc">
+          <div class="card">
+            <div class="card-header">有夠棒</div>
+            <img
+              src="images/123-22-1024x683.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body"  >
+              <h5 class="card-title">神秘美食</h5>
+              <p class="card-text">
+                Some quick example text to build on the 神秘美食 and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary mb-3 custom-button"
+                >加入購物車</a
+              >
+            </div>
+          </div>
+        </div>
+
+          <div class="col-lg-4 col-md-6 brc">
+            <div class="card">
+              <div class="card-header">太好吃了吧</div>
+              <img
+                src="images/123-22-1024x683.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body"  >
+                <h5 class="card-title">神秘美食</h5>
+                <p class="card-text">
+                  Some quick example text to build on the 神秘美食 and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary mb-3 custom-button"
+                  >加入購物車</a
+                >
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6 brc">
+            <div class="card">
+              <div class="card-header">老闆們超愛</div>
+              <img
+                src="images/123-22-1024x683.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body"  >
+                <h5 class="card-title">神秘美食</h5>
+                <p class="card-text">
+                  Some quick example text to build on the 神秘美食 and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary mb-3 custom-button"
+                  >加入購物車</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="row hidden-description">
+           <div class="col-lg-4 col-md-6 brc">
+            <div class="card">
+              <div class="card-header">煮菜超難</div>
+              <img
+                src="images/123-22-1024x683.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body"  >
+                <h5 class="card-title">神秘美食</h5>
+                <p class="card-text">
+                  Some quick example text to build on the 神秘美食 and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary mb-3 custom-button"
+                  >加入購物車</a
+                >
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6 brc">
+            <div class="card">
+              <div class="card-header">珍愛廚師</div>
+              <img
+                src="images/123-22-1024x683.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body"  >
+                <h5 class="card-title">神秘美食</h5>
+                <p class="card-text">
+                  Some quick example text to build on the 神秘美食 and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary mb-3 custom-button"
+                  >加入購物車</a
+                >
+              </div>
+            </div>
+          </div>
+
+           <div class="col-lg-4 col-md-6 brc">
+            <div class="card">
+              <div class="card-header">不好吃是你不懂</div>
+              <img
+                src="images/123-22-1024x683.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body"  >
+                <h5 class="card-title">神秘美食</h5>
+                <p class="card-text">
+                  Some quick example text to build on the 神秘美食 and make up
+                  the bulk of the card's content.
+                </p>
+                <a href="#" class="btn btn-primary mb-3 custom-button"
+                  >加入購物車</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <button id="showMoreButton">查看更多</button>
+  </div>
+  <script>
+    const showMoreButton = document.getElementById("showMoreButton");
+    const hiddenDescription = document.querySelector(
+      ".hidden-description"
+    );
+
+    showMoreButton.addEventListener("click", function () {
+      hiddenDescription.style.display = "flex";
+      showMoreButton.style.display = "none"; // 隱藏 "Show More" 按鈕
+    });
+  </script>
+  
+    <!-- 分頁列 -->
+
+    <p>&copy; <span id="currentYear"></span> - scrumptious</p>
+
+    <script>
+      // 獲取當前日期的年份
+      const currentYear = new Date().getFullYear();
+    
+      // 將年份插入到HTML中
+      document.getElementById("currentYear").textContent = currentYear;
+    </script>
+  </body>
 </html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scrumptious</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+       /* 通知欄的樣式 */
+.notification-bar {
+    background-color: #f9423a; /* 紅色背景 */
+    padding: 10px; /* 設置適當的填充 */
+}
+
+/* 導覽列的樣式 */
+.navbar {
+    background-color: #fff0e0; /* 淺粉色背景 */
+}
+
+/* 導覽列中連結的文字顏色 */
+.navbar-nav .nav-link {
+    color: #f9423a; /* 黑色文字 */
+}
+
+/* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+.navbar-nav .nav-link.active {
+    color: #f9423a;   
+}
+
+.memberNav a {
+    color: #f9423a;   
+}
+
+/* 麵包屑的文字顏色 */
+.breadcrumb-item a {
+    color: #f9423a;  
+}
+
+.marquee-section {
+    white-space: nowrap; /* 讓文字不換行 */
+    overflow: hidden; /* 隱藏超出容器的內容 */
+    color: #f9423a;
+}
+
+.marquee-section__list {
+    display: inline-block; /* 將元素水平排列 */
+    padding-right: 50px; /* 增加元素之間的間距 */
+    animation: marquee 45s linear infinite; /* 使用動畫效果，無限循環 */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0); /* 起始位置：不移動 */
+    }
+    100% {
+        transform: translateX(-100%); /* 結束位置：向左移動 100% */
+    }
+}
+
+#portfolio-flters li[data-filter="*"] {
+    background-color: #E12490; /* ALL的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-service"] {
+    background-color: #00bc70; /* 服務的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-environment"] {
+    background-color: #ff4438; /* 環境的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+#portfolio-flters li[data-filter=".filter-products"] {
+    background-color: #00b2e3; /* 餐點的背景色 */
+    font-weight: bold;
+    color: #fff0e0;
+}
+
+</style>
+</head>
+
+<body>
+  <div>
+    <!-- 第一列：通知欄 -->
+    
+        
+            <div class="notification-bar">
+                <a href="#" class="notification-bar__text">
+                    註冊即送價值$100優惠券
+                </a>
+            </div>
+        
+    
+
+    <!-- 第二列：導覽欄 -->
+    
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#">
+
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">開始點餐</a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">菜單介紹</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                    <img src="images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
+
+                    <div class="memberNav ms-auto">
+                        <a href="#" class="text-dark">登入會員</a>
+                        <a href="#" class="text-dark">註冊會員</a>
+                        <a href="#" class="text-dark">購物車</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+      
+      <div class="container">
+        <!-- 輪播開始 -->
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/peijia-li-AIWSvNU38H8-unsplash.jpg" alt="..." style="height: 70vh; object-fit: cover;" class="d-block w-100"> 
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+           
+            <div class="carousel-item">
+              <img src="images/jason-leung-WmTK_QfDxlE-unsplash.jpg" style="height: 70vh; object-fit: cover;" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- 輪播結束 -->
+      </div>
+    </div>
+    <div class="main" role="main">
+      <div class="row row-narrow">
+        <div class="page-sidebar">
+          <div class="sidebar-menu">
+            <h2 class="menu-category">我的帳戶</h2>
+            <ul class="menu">
+                <li class="menu-item"><a class="menu-item-target" href="/tw/account-order-history.html">訂餐歷史</a></li>                
+                <li class="menu-item selected"><a class="menu-item-target" href="/tw/editProfile.html">帳戶設定</a></li>
+                <li class="menu-item"><a class="menu-item-target" href="/tw/changeUserPassword.html">變更密碼</a></li>
+              
+            </ul>
+          </div>
+        </div>
+
+        <div class="page-title">
+          <h1>帳戶設定</h1>
+        </div>
+        <div class="page-content">
+          <div class="panel-lg panel panel-default">
+            <div class="panel-heading">
+              <h3>編輯明細</h3>
+            </div>
+
+            
+            <div class="container">
+              
+                <form class="row g-3">
+                    <div class="">
+                        <label for="inputName" class="form-label">姓名</label>
+                        <input type="email" class="form-control" id="inputName">
+                    </div>
+                
+                <div class="col-md-6">
+                    <label for="inputGender" class="form-label">性別</label>
+                    <select id="inputGender" class="form-select">
+                      <option selected>
+                        <option value="Male">男</option>
+                        <option value="Female">女</option>
+                        <option value="Other">其他</option>
+                    </option>
+                </select>
+              </div>
+              
+                <div class="col-md-6">
+                    <label class="form-label">出生日期</label>
+                    <br/>
+                    <input type="date" />
+                </div>
+                    <div class="">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="">
+                      <label for="inputPhoneNumber" class="form-label">手機號碼</label>
+                      <input type="text" class="form-control" id="inputPhoneNumber">
+                    </div>                      
+                    
+                    <div class="">
+                      <label for="inputAddress" class="form-label">地址</label>
+                      <input type="text" class="form-control" id="inputAddress">
+                    </div>                                                    
+                    <div class="">
+                      <button type="submit" class="btn btn-primary">儲存</button>
+                    </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+
+    <p>&copy; <span id="currentYear"></span> - scrumptious</p>
+
+<script>
+  // 獲取當前日期的年份
+  const currentYear = new Date().getFullYear();
+
+  // 將年份插入到HTML中
+  document.getElementById("currentYear").textContent = currentYear;
+</script>
+</body>
+</html>

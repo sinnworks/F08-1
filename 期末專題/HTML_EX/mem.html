@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scrumptious</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .hidden-section {
+        display: none;
+      }
+
+      .visible-section {
+        display: block;
+      }
+      /* 通知欄的樣式 */
+      .notification-bar {
+        background-color: #f9423a; /* 紅色背景 */
+        padding: 10px; /* 設置適當的填充 */
+      }
+
+      /* 導覽列的樣式 */
+      .navbar {
+        background-color: #fff0e0; /* 淺粉色背景 */
+      }
+
+      /* 導覽列中連結的文字顏色 */
+      .navbar-nav .nav-link {
+        color: #f9423a; /* 黑色文字 */
+      }
+
+      /* 如果需要更改活動連結的文字顏色，可以使用以下樣式 */
+      .navbar-nav .nav-link.active {
+        color: #f9423a;
+      }
+
+      .memberNav a {
+        color: #f9423a;
+      }
+
+      /* 麵包屑的文字顏色 */
+      .breadcrumb-item a {
+        color: #f9423a;
+      }
+
+      .marquee-section {
+        white-space: nowrap; /* 讓文字不換行 */
+        overflow: hidden; /* 隱藏超出容器的內容 */
+        color: #f9423a;
+      }
+
+      .marquee-section__list {
+        display: inline-block; /* 將元素水平排列 */
+        padding-right: 50px; /* 增加元素之間的間距 */
+        animation: marquee 45s linear infinite; /* 使用動畫效果，無限循環 */
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0); /* 起始位置：不移動 */
+        }
+        100% {
+          transform: translateX(-100%); /* 結束位置：向左移動 100% */
+        }
+      }
+
+      #portfolio-flters li[data-filter="*"] {
+        background-color: #e12490; /* ALL的背景色 */
+        font-weight: bold;
+        color: #fff0e0;
+      }
+
+      #portfolio-flters li[data-filter=".filter-service"] {
+        background-color: #00bc70; /* 服務的背景色 */
+        font-weight: bold;
+        color: #fff0e0;
+      }
+
+      #portfolio-flters li[data-filter=".filter-environment"] {
+        background-color: #ff4438; /* 環境的背景色 */
+        font-weight: bold;
+        color: #fff0e0;
+      }
+
+      #portfolio-flters li[data-filter=".filter-products"] {
+        background-color: #00b2e3; /* 餐點的背景色 */
+        font-weight: bold;
+        color: #fff0e0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <!-- 第一列：通知欄 -->
+
+      <div class="notification-bar">
+        <a href="#" class="notification-bar__text"> 註冊即送價值$100優惠券 </a>
+      </div>
+
+      <!-- 第二列：導覽欄 -->
+
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"> </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">開始點餐</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">菜單介紹</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">聯絡我們</a>
+              </li>
+            </ul>
+            <img
+              src="images/logo-removebg-preview1.png"
+              alt="..."
+              class="logoPic adjusted-logo"
+            />
+
+            <div class="memberNav ms-auto">
+              <a href="#" class="text-dark">登入會員</a>
+              <a href="#" class="text-dark">註冊會員</a>
+              <a href="#" class="text-dark">購物車</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <!-- 添加帳戶設定和訂餐歷史的链接 -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="account-settings-link"
+              data-bs-toggle="tab"
+              href="#account-settings"
+              role="tab"
+              aria-controls="account-settings"
+              aria-selected="true"
+              <a
+              href="EditMemberInfos.html"
+              class="text-dark"
+              >帳戶設定</a
+            >
+          </li>
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="order-history-link"
+              data-bs-toggle="tab"
+              href="#order-history"
+              role="tab"
+              aria-controls="order-history"
+              aria-selected="false"
+              <a
+              href="OrderHistory.html"
+              class="text-dark"
+              >訂餐歷史</a
+            >
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link"
+              id="order-history-link"
+              data-bs-toggle="tab"
+              href="#order-history"
+              role="tab"
+              aria-controls="order-history"
+              aria-selected="false"
+              <a
+              href="ChangePassword.html"
+              class="text-dark"
+              >變更密碼</a
+            >
+          </li>
+        </ul>
+        <!-- 帳戶設定部分 -->
+        <div class="tab-content" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="account-settings"
+            role="tabpanel"
+            aria-labelledby="account-settings-link"
+          >
+            <form class="row g-3">
+              <!-- 这里放置帳戶設定部分的表单内容 -->
+            </form>
+          </div>
+
+          <!-- 訂餐歷史部分 -->
+          <div
+            class="tab-pane fade"
+            id="order-history"
+            role="tabpanel"
+            aria-labelledby="order-history-link"
+          >
+            <!-- 这里放置訂餐歷史部分的内容 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript 代码，用于处理链接点击事件
+      const accountSettingsLink = document.querySelector(
+        "#account-settings-link"
+      );
+      const orderHistoryLink = document.querySelector("#order-history-link");
+      const changePasswordLink = document.querySelector(
+        "#change-password-link"
+      );
+      const accountSettingsSection =
+        document.querySelector("#account-settings");
+      const orderHistorySection = document.querySelector("#order-history");
+      const changePasswordSection = document.querySelector("#change-password");
+
+      // 当帳戶設定链接被点击时显示帳戶設定部分，隐藏其他部分
+      accountSettingsLink.addEventListener("click", () => {
+        accountSettingsSection.style.display = "block";
+        orderHistorySection.style.display = "none";
+        changePasswordSection.style.display = "none";
+      });
+
+      // 当訂餐歷史链接被点击时显示訂餐歷史部分，隐藏其他部分
+      orderHistoryLink.addEventListener("click", () => {
+        accountSettingsSection.style.display = "none";
+        orderHistorySection.style.display = "block";
+        changePasswordSection.style.display = "none";
+      });
+
+      // 当變更密碼链接被点击时显示變更密碼部分，隐藏其他部分
+      changePasswordLink.addEventListener("click", () => {
+        accountSettingsSection.style.display = "none";
+        orderHistorySection.style.display = "none";
+        changePasswordSection.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
