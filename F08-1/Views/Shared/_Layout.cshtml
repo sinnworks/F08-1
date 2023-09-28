@@ -10,10 +10,10 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/Content/style.css" />
     @*<style>
-        .custom-white-text {
-            color: white;
-        }
-    </style>*@
+            .custom-white-text {
+                color: white;
+            }
+        </style>*@
 
 </head>
 <body>
@@ -26,50 +26,50 @@
     </div>
 
     @*<nav class="navbar navbar-expand-md">
-        <div class="container container-fluid">
+            <div class="container container-fluid">
 
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display:flex; justify-content:space-evenly;">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="display:flex; justify-content:space-evenly;">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        @Html.ActionLink("首頁", "Index", "Home")
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("開始點餐", "Products", "Home")
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("菜單介紹", "Index", "Categories")
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("聯絡我們", "Index", "ContactUs")
-                    </li>
-                </ul>
-
-
-
-                <a class="navbar-brand" href="#">
-                    <img src="~/Images/logo-removebg-preview1.png" alt="Scrumptious Logo" class="adjusted-logo">
-                </a>
-                <div class="memberNav">
-                    <ul class="memberNav d-flex flex-nowrap">
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("登出會員", "Logout", "Account")</li>
-                        }
-                        else
-                        {
-                            <li>@Html.ActionLink("登入會員", "Login", "Account")</li>
-                            <li>@Html.ActionLink("註冊會員", "Register", "Account")</li>
-                        }
-                        <li>@Html.ActionLink("購物車", "Cart", "Cart")</li>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            @Html.ActionLink("首頁", "Index", "Home")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("開始點餐", "Products", "Home")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("菜單介紹", "Index", "Categories")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("聯絡我們", "Index", "ContactUs")
+                        </li>
                     </ul>
+
+
+
+                    <a class="navbar-brand" href="#">
+                        <img src="~/Images/logo-removebg-preview1.png" alt="Scrumptious Logo" class="adjusted-logo">
+                    </a>
+                    <div class="memberNav">
+                        <ul class="memberNav d-flex flex-nowrap">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("登出會員", "Logout", "Account")</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink("登入會員", "Login", "Account")</li>
+                                <li>@Html.ActionLink("註冊會員", "Register", "Account")</li>
+                            }
+                            <li>@Html.ActionLink("購物車", "Cart", "Cart")</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>*@
+        </nav>*@
 
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container-fluid">
@@ -87,7 +87,7 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        @Html.ActionLink("首頁", "Index", "Home", new {@class= "nav-link" })
+                        @Html.ActionLink("首頁", "Index", "Home", new { @class = "nav-link" })
                     </li>
                     <li class="nav-item">
                         @Html.ActionLink("首頁", "Index", "Home", new { @class = "nav-link" })
@@ -101,23 +101,32 @@
                         @Html.ActionLink("首頁", "Index", "Home", new { @class = "nav-link" })
                     </li>
                 </ul>
-                <img src="images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
+                <img src="~/Images/logo-removebg-preview1.png" alt="..." class="logoPic adjusted-logo">
 
-                <div class="memberNav ms-auto">
+
+                <ul class="navbar-nav">
+
                     @if (User.Identity.IsAuthenticated)
                     {
-                        @Html.ActionLink("登出會員", "Logout", "Account")
+
+                        <li class="nav-item">
+                            @Html.ActionLink("登出會員", "Logout", "Account", new { @class = "nav-link" })
+                        </li>
+
                     }
                     else
                     {
-                        @Html.ActionLink("登入會員", "Login", "Account")
-                        @Html.ActionLink("註冊會員", "Register", "Account")
+                        <li class="nav-item">
+                            @Html.ActionLink("登入會員", "Login", "Account", new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("註冊會員", "Register", "Account", new { @class = "nav-link" })
+                        </li>
                     }
-                    @Html.ActionLink("購物車", "Cart", "Cart")
-                    @*<a href="#" class="text-dark">登入會員</a>
-        <a href="#" class="text-dark">註冊會員</a>
-        <a href="#" class="text-dark">購物車</a>*@
-                </div>
+                    <li class="nav-item">
+                        @Html.ActionLink("購物車", "Cart", "Cart", new { @class = "nav-link" })
+                    </li>                    
+                </ul>               
             </div>
         </div>
     </nav>
